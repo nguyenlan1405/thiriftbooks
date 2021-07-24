@@ -23,13 +23,13 @@
 define( 'DB_NAME', 'bookdb' );
 
 /** MySQL database username */
-define( 'DB_USER', 'root' );
+define( 'DB_USER', 'nguyenlan' );
 
 /** MySQL database password */
 define( 'DB_PASSWORD', '1234' );
 
 /** MySQL hostname */
-define( 'DB_HOST', 'localhost' );
+define( 'DB_HOST', '42.118.85.113' );
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8mb4' );
