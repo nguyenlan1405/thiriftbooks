@@ -13,3 +13,15 @@ Updated: 2021-07-25 00:28:05
 .site-main .page-title {
 	display: none;
 }
+
+.site-header {
+	margin-bottom: 0.6em!important;
+}
+.storefront-full-width-content .woocommerce-products-header {
+	padding: 0em !important
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
