@@ -1,0 +1,11 @@
+/*
+Theme Name: Storefront Child Theme
+Theme URI: 
+Description: Day la child theme cua storefront
+Author: Thach Pham
+Author URI: 
+Template: storefront-child
+Version: 0.1
+*/
+
+@import url("../storefront/style.css");
