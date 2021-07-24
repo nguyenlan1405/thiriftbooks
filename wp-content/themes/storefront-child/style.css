@@ -10,6 +10,6 @@ Version: 3.7.0.1627147685
 Updated: 2021-07-25 00:28:05
 
 */
-.page .entry-title {
-display: none;
+.site-main .page-title {
+	display: none;
 }
