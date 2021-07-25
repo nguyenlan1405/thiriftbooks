@@ -30,3 +30,24 @@ Updated: 2021-07-25 00:28:05
   outline: none!important;
   box-shadow: none!important;
 }
+
+.wc-block-components-product-image img {
+	width: 251px!important;
+	height: 355px!important;
+}
+
+h2.wc-block-components-product-title {
+  width: 251px!important;
+  white-space: nowrap!important; 
+  overflow: hidden!important;
+  text-overflow: ellipsis!important;
+}
+
+.widget_nav_menu ul li::before {
+	display: none;
+}
+
+.wc-block-components-sort-select {
+  margin-top: 2em!important;
+  margin-bottom: 1.2em!important;
+}
