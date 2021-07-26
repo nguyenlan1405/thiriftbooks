@@ -65,3 +65,9 @@ div.wc-block-grid__product-title {
 .woocommerce-info, .woocommerce-noreviews, p.no-comments {
   display: none!important;
 }
+.wc-block-grid__product-onsale {
+  display: none;
+}
+del.woocommerce-Price-amount amount{
+  color: red!important;
+}
