@@ -29,7 +29,7 @@ define( 'DB_USER', 'nguyenlan' );
 define( 'DB_PASSWORD', '1234' );
 
 /** MySQL hostname */
-define( 'DB_HOST', '42.118.85.113' );
+define( 'DB_HOST', 'https://bookstore/' );
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8mb4' );
