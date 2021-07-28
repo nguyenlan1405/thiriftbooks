@@ -1,0 +1,29 @@
+/**
+
+    FOR POPOVER TYPE COLOR PICKER
+
+**/
+
+.ep__popover_color_picker {
+  &.ep__with_label {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.ep__popover_color_picker__popover {
+  .components-popover__content {
+    padding: 25px !important;
+    @include scrollbar();
+
+    .ep__popover_color_picker__root {
+      width: 100%;
+
+      .components-circular-option-picker {
+        text-align: center !important;
+      }
+    }
+  }
+}

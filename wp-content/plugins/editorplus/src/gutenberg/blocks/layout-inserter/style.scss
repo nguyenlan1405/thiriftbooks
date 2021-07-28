@@ -1,0 +1,126 @@
+.ep-td-modal {
+  width: 80% !important;
+  overflow-y: hidden;
+
+  .ep-td-header {
+    padding: 0px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .components-modal__content {
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .components-modal__header {
+    margin-bottom: 0 !important;
+  }
+}
+
+.ep-directory-main {
+  height: 600px;
+  .root {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    height: 100%;
+
+    .ep-td-sidebar {
+      display: flex;
+      flex-direction: column;
+      justify-self: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      overflow-y: scroll;
+      border-right: 1px solid #eee;
+      @include scrollbar();
+
+      .components-menu-group {
+        width: 100%;
+      }
+
+      &:hover {
+        border-right: none;
+      }
+
+      .ep-td-category-menu-item {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .ep-td-loader {
+        padding: 250px 0px;
+        text-align: center;
+      }
+    }
+
+    .ep-directory-content {
+      padding: 20px;
+      overflow-y: scroll;
+      @include scrollbar();
+
+      .ep-td-template {
+        margin: 20px 0px;
+        position: relative;
+        cursor: pointer;
+
+        .overlay {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          left: 0;
+          top: 0;
+          background-color: #0000008a;
+          transition: 0.5s;
+          opacity: 0;
+        }
+
+        .actions {
+          opacity: 0;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transition: 0.5s;
+          transform: translate(-50%, -30%);
+        }
+
+        img {
+          transition: 0.5s;
+        }
+
+        &:hover .actions {
+          opacity: 1;
+          transform: translate(-50%, -50%);
+        }
+        &:hover .overlay {
+          opacity: 1;
+        }
+
+        &:hover img {
+          filter: blur(2px);
+        }
+      }
+
+      .ep-td-loader {
+        text-align: center;
+        padding: 50px 0px;
+      }
+
+      .ep-td-pagin {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        button {
+          height: 25px;
+        }
+        span {
+          margin: 0px 5px;
+        }
+      }
+    }
+  }
+}

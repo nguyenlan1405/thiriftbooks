@@ -1,0 +1,101 @@
+{
+  "background": {
+    "target": "ep_lottie_player",
+    "responsive": true,
+    "hover": true,
+    "options": [
+      {
+        "label": "Background",
+        "control": "Background",
+        "attribute": "background"
+      }
+    ]
+  },
+  "border": {
+    "target": "ep_lottie_player",
+    "responsive": true,
+    "hover": true,
+    "options": [
+      {
+        "label": "Border",
+        "control": "Border",
+        "attribute": "border"
+      }
+    ]
+  },
+  "borderRadius": {
+    "target": "ep_lottie_player",
+    "responsive": true,
+    "hover": true,
+    "options": [
+      {
+        "label": "Border Radius",
+        "control": "Dimensions",
+        "attribute": "borderRadius",
+        "css" : "border-radius"
+      }
+    ]
+  },
+  "size": {
+    "target": "ep_lottie_player",
+    "responsive": true,
+    "hover": false,
+    "options": [
+      {
+        "label": "Size",
+        "control": "Range",
+        "attribute": "size",
+        "css": "width",
+        "defaults": {
+          "desktop": "300px"
+        }
+      }
+    ]
+  },
+  "alignment": {
+      "target": "ep_lottie_wrap",
+      "responsive": true,
+      "hover": false,
+      "options": [
+        {
+          "label": "Alignment",
+          "control": "ButtonGroup",
+          "attribute": "alignment",
+          "css": "justify-content",
+          "defaults": {
+            "desktop": "center"
+          }, 
+          "props": {
+            "options": [
+              {
+                "icon": "editor-alignleft",
+                "value": "flex-start"
+              },
+              {
+                "icon": "editor-aligncenter",
+                "value": "center"
+              },
+              {
+                "icon": "editor-alignright",
+                "value": "flex-end"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "padding": {
+      "target": "ep_lottie_player",
+      "responsive": true,
+      "hover": true,
+      "options": [
+        {
+          "label": "Padding",
+          "control": "Dimensions",
+          "attribute": "padding",
+          "css": "padding"
+        }
+      ]
+    }
+      
+}

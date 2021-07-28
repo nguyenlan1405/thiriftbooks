@@ -1,0 +1,123 @@
+{
+    "titleTypography": {
+        "target": "ep_pb_title",
+        "responsive": true,
+        "hover": true,
+        "options": [
+          {
+            "label": "Title Typography",
+            "control": "Typography",
+            "attribute": "titleTypography",
+            "defaults": {
+              "desktop": {
+                  "font-size": "17px",
+                  "text-color": "#1e1e1e"
+              }
+             }
+          }
+        ]
+      },
+      "barTextTypography": {
+        "target": "ep_pb",
+        "responsive": true,
+        "hover": true,
+        "options": [
+          {
+            "label": "Bar Text Typography",
+            "control": "Typography",
+            "attribute": "barTextTypography",
+            "defaults": {
+              "desktop": {
+                  "font-size": "14px",
+                  "text-color": "#ffffff"
+              }
+             }
+          }
+        ]
+      },
+      "Background": {
+        "target": "ep_pb_wrap",
+        "responsive": true,
+        "hover": true,
+        "options": [
+          {
+            "label": "Progress Bar Background",
+            "control": "Background",
+            "attribute": "barBackground",
+            "defaults": {
+              "desktop": {
+                "solid": "#f0f0f0"
+              }
+            }    
+          }
+        ]
+      },
+      "activeBackground": {
+        "target": "ep_pb",
+        "responsive": true,
+        "hover": true,
+        "options": [
+          {
+            "label": "Progress Bar Active Background",
+            "control": "Background",
+            "attribute": "barActiveBackground",
+            "defaults": {
+              "desktop": {
+                "solid": "#007cba"
+              }
+            }
+          }
+        ]
+      },
+      "sizing": {
+        "target": "ep_pb",
+        "responsive": true,
+        "hover": true,
+        "options": [
+          {
+            "label": "Height",
+            "control": "Range",
+            "attribute": "barHeight",
+            "css": "height",
+            "props": {
+              "supportedUnits": [
+                "px"
+              ],
+              "max": 100
+            },
+            "defaults": {
+              "desktop": "30px"
+            }
+          }
+        ]
+      },
+      "border": {
+        "target": "ep_pb_wrap",
+        "responsive": true,
+        "hover": true,
+        "options": [
+          {
+            "label": "Border Radius",
+            "control": "Dimensions",
+            "attribute": "barRadius",
+            "css" : "border-radius",
+            "defaults": {
+              "desktop": "4px 4px 4px 4px"
+            }
+          }
+        ]
+      },
+      "shadow": {
+        "target": "ep_pb_wrap",
+        "responsive": true,
+        "hover": true,
+        "options": [
+          {
+            "label": "Shadow",
+            "control": "Shadow",
+            "attribute": "barShadow",
+            "css" : "box-shadow"
+          }
+        ]
+      }
+}

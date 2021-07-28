@@ -1,0 +1,44 @@
+.ep-background {
+  margin: 10px 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  .ep-bg-opacity {
+    margin: 15px 0px;
+  }
+}
+
+.ep__background_picker_popover {
+  z-index: 1;
+  &:not(.is-expanded) {
+    .components-popover__content {
+      width: 300px;
+      height: 410px;
+      .ep__background_nav {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  .components-popover__content {
+    padding: 30px !important;
+    @include scrollbar();
+    input {
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    .ep__background_nav {
+      margin-bottom: 15px;
+    }
+    .ep-clear {
+      margin: 10px 0px;
+      text-align: right;
+    }
+  }
+  .cwp-opt {
+    margin: 10px 0px;
+    @include flexBox();
+  }
+}

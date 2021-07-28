@@ -1,0 +1,16 @@
+.ep-style-panel {
+  display: flex;
+  align-items: center;
+  .controls {
+    margin: 0px 15px;
+  }
+}
+
+.ep-inspector-actions {
+  padding: 0px 15px;
+  margin: 0px 0px 15px 0px;
+  button.maxed {
+    width: 100%;
+    justify-content: center;
+  }
+}

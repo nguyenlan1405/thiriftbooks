@@ -1,0 +1,76 @@
+.ep-header {
+  background-color: $primaryColor;
+  padding: 50px 0px 0px 0px;
+  margin: 0px 0px 60px 0px;
+
+  .ep-content {
+    width: 70%;
+    margin: auto;
+    text-align: center;
+
+    h1 {
+      margin: 0px 0px 20px 0px;
+      font-size: 35px;
+      font-weight: 700;
+      color: #3e5667;
+      display: inline-block;
+    }
+
+    .dashicons {
+      font-size: 35px;
+      line-height: 0.6;
+      margin-right: 10px;
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 1.8;
+      margin-top: 10px;
+      color: #687c93;
+      margin: 25px auto 0 auto;
+    }
+
+    .ep-navigation {
+      margin: 10px 0px;
+      padding: 30px 0px 0px 0px;
+
+      ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        li {
+          cursor: pointer;
+          margin-bottom: 0;
+          border-radius: 5px 5px 0px 0px;
+          color: $textColor;
+          font-size: 15px;
+          font-weight: 400;
+
+          &.active {
+            background-color: $secondaryColor;
+            color: $contrastColor;
+
+            &:hover {
+              background-color: $secondaryColor;
+            }
+          }
+
+          &:not(:first-child) {
+            margin: 0px 10px;
+          }
+
+          padding: 13px 30px;
+
+          &:hover {
+            background-color: $secondaryColor;
+          }
+        }
+      }
+    }
+  }
+}
+
+.ep_version {
+  font-size: 10px;
+}

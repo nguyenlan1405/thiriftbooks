@@ -1,0 +1,19 @@
+@import "../../../../styles/partials/vars.scss";
+
+.ep-no-blocks {
+  background-color: $secondaryColor;
+  padding: 50px 20px;
+  background-color: rgb(255, 255, 255);
+
+  .content {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+  }
+
+  p {
+    color: $textColor;
+    margin: 20px 0px;
+    line-height: 28px;
+  }
+}

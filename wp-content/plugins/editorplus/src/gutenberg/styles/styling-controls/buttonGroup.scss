@@ -1,0 +1,36 @@
+.ep-btn-grp {
+  .ep-options {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    justify-content: space-between;
+
+    button {
+      border-radius: 0px !important;
+      border-radius: 0px !important;
+      font-weight: 600;
+      font-size: 15px;
+      color: #808285;
+      flex: 1;
+      justify-content: center;
+      & svg {
+        width: 15px !important;
+        height: 15px !important;
+      }
+
+      & .dashicon {
+        font-size: 15px !important;
+        vertical-align: middle !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+  }
+
+  & .ep-active-btn {
+    background-color: #eaeaea;
+    color: var(--wp-admin-theme-color) !important;
+  }
+}

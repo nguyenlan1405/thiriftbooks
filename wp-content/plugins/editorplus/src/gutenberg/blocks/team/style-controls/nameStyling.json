@@ -1,0 +1,14 @@
+{
+  "nameStyling": {
+    "target": "ep_team_name",
+    "responsive": true,
+    "hover": true,
+    "options": [
+      {
+        "label": "",
+        "control": "Typography",
+        "attribute": "nameTypography"
+      }
+    ]
+  }
+}

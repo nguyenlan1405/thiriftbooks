@@ -1,0 +1,117 @@
+{
+    "countdownBackground": {
+        "target": "ep_cd_item",
+        "responsive": true,
+        "hover": true,
+        "options": [
+          {
+            "label": "Background",
+            "control": "Background",
+            "attribute": "countdownBackground",
+            "defaults": {
+              "desktop": {
+                "solid": "#f0f0f0"
+              }
+            } 
+          }
+        ]
+    },
+    "countdownBorder": {
+      "target": "ep_cd_item",
+      "responsive": true,
+      "hover": true,
+      "options": [
+        {
+          "label": "Border",
+          "control": "Border",
+          "attribute": "countdownBorder"
+        }
+      ]
+  },
+  "countdownBorderRadius": {
+    "target": "ep_cd_item",
+    "responsive": true,
+    "hover": true,
+    "options": [
+      {
+        "label": "Border Radius",
+        "control": "Dimensions",
+        "attribute": "countdownBorderRadius",
+        "css": "border-radius"
+      }
+    ]
+},
+"countdownShadow": {
+  "target": "ep_cd_item",
+  "responsive": true,
+  "hover": true,
+  "options": [
+    {
+      "label": "Box Shadow",
+      "control": "Shadow",
+      "attribute": "countdownShadow",
+      "css": "box-shadow"
+    }
+  ]
+},
+    "itemGap":{
+      "target": "ep_countdown",
+      "responsive": true,
+      "hover": false,
+      "options": [
+          {
+              "label":    "Gap",
+              "control":  "Range",
+              "attribute": "itemGap",
+              "css": "gap",
+              "props": {
+                "supportedUnits": [
+                  "px"
+                ],
+                "max": 100
+              },
+              "defaults": {
+                  "desktop": "10px"
+             }
+          }
+      ]
+    },
+    "numberTypography":{
+        "target": "ep_cd_item .ep_cd_digit",
+        "responsive": true,
+        "hover": true,
+        "options": [
+            {
+            "label":    "",
+            "control":  "Typography",
+            "attribute": "numberTypography",
+            "defaults": {
+                "desktop": {
+                    "text-color": "#1e1e1e",
+                    "font-size": "60px"
+                }
+              }
+            }
+        ]
+    },
+    "labelTypography":{
+        "target": "ep_cd_item .ep_cd_label",
+        "responsive": true,
+        "hover": true,
+        "options": [
+            {
+            "label":    "",
+            "control":  "Typography",
+            "attribute": "labelTypography",
+            "defaults": {
+                "desktop": {
+                    "text-color": "#1e1e1e",
+                    "font-size": "17px"
+                }
+              }
+            }
+        ]
+    }
+    
+    
+}

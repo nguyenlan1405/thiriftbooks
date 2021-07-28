@@ -1,0 +1,22 @@
+.ep-columnspro-variations-picker {
+  .ep-columnspro-variations {
+    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    .ep-columnspro-variation {
+      text-align: center;
+
+      button {
+        padding: 30px 10px;
+        width: 100%;
+        justify-content: center;
+      }
+
+      span {
+        margin: 10px 0px 0px 0px;
+        display: block;
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "backgroundStyling": {
+    "target": "ep_team_wrapper",
+    "responsive": true,
+    "hover": true,
+    "options": [
+      {
+        "label": "",
+        "control": "Background",
+        "attribute": "bgColor"
+      },
+      {
+        "label": "",
+        "control": "Dimensions",
+        "attribute": "bgPadding",
+        "css": "padding"
+      }
+    ]
+  }
+}
