@@ -1,0 +1,14 @@
+@import './header.scss';
+
+.ep-heading {
+    font-weight: 300;
+}
+
+.ep-btn {
+    border:inset 0 0 0 1px $primaryColor !important;
+    color: $primaryColor !important;
+}
+
+.ep-heading-bold {
+    font-weight: 800;
+}

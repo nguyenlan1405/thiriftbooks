@@ -1,0 +1,149 @@
+{
+    "iconAlignment": {
+        "target": "ep_icon_wrapper",
+        "responsive": true,
+        "options": [
+          {
+            "label": "Alignment",
+            "control": "ButtonGroup",
+            "attribute": "iconAlignment",
+            "css": "text-align",
+            "defaults": {
+              "desktop": "center"
+            }, 
+            "props": {
+              "options": [
+                {
+                  "icon": "editor-alignleft",
+                  "value": "left"
+                },
+                {
+                  "icon": "editor-aligncenter",
+                  "value": "center"
+                },
+                {
+                  "icon": "editor-alignright",
+                  "value": "right"
+                }
+              ]
+            }
+          }
+        ]
+      },
+
+      "iconColor": {
+        "target": "ep_icon_wrapper span",
+        "responsive": true,
+        "hover": true,
+        "options": [
+          {
+            "label": "Color",
+            "control": "ColorPicker",
+            "attribute": "iconColor",
+            "css": "color",
+            "defaults": {
+              "desktop": {
+                "color": "#1e1e1e"
+              }
+            } 
+          }
+        ]
+      },
+
+    "iconBackground": {
+      "target": "ep_icon_wrapper span",
+      "responsive": true,
+      "hover": true,
+      "options": [
+        {
+          "label": "Background",
+          "control": "Background",
+          "attribute": "iconBackground",
+          "defaults": {
+            "desktop": {
+              "solid": "#f0f0f0"
+            }
+          } 
+        }
+      ]
+    },
+
+    "iconBorder": {
+        "target": "ep_icon_wrapper span",
+        "responsive": true,
+        "hover": true,
+        "options": [
+          {
+            "label": "Border",
+            "control": "Border",
+            "attribute": "iconBorder"
+          }
+        ]
+      },
+
+      
+    "iconRadius": {
+        "target": "ep_icon_wrapper span",
+        "responsive": true,
+        "hover": true,
+        "options": [
+          {
+            "label": "Border Radius",
+            "control": "Dimensions",
+            "attribute": "iconRadius",
+            "css": "border-radius"
+          }
+        ]
+      },
+
+      "iconSize": {
+        "target": "ep_icon_wrapper span",
+        "responsive": true,
+        "hover": true,
+        "options": [
+          {
+            "label": "Size",
+            "control": "Range",
+            "attribute": "iconSize",
+            "css": "font-size",
+            "defaults": {
+              "desktop": "100px"
+            } 
+          }
+        ]
+      },
+
+      "iconPadding": {
+        "target": "ep_icon_wrapper span",
+        "responsive": true,
+        "hover": true,
+        "options": [
+          {
+            "label": "Padding",
+            "control": "Dimensions",
+            "attribute": "iconPadding",
+            "css": "padding",
+            "defaults": {
+              "desktop": "15px 15px 15px 15px"
+            } 
+          }
+        ]
+      },
+
+      "iconMargin": {
+        "target": "ep_icon_wrapper span",
+        "responsive": true,
+        "hover": true,
+        "options": [
+          {
+            "label": "Margin",
+            "control": "Dimensions",
+            "attribute": "iconMargin",
+            "css": "margin"
+          }
+        ]
+      }
+  
+  
+  }
+  

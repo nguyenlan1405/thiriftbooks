@@ -1,0 +1,19 @@
+.ep-range-control {
+  .cwp-opt {
+    @include flexBox();
+  }
+
+  .ep-r-u {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .ep-important {
+    width: 100%;
+    margin: 15px 0px;
+    display: flex;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,27 @@
+@import "./sub/noBlocksFound.scss";
+@import "./sub/blockList.scss";
+@import "./sub/pagination.scss";
+
+.ep-blocks-root {
+  width: 70%;
+  margin: auto;
+}
+
+.ep-adding-to-custom-blocks {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  & input,
+  button {
+    height: 35px !important;
+  }
+
+  .components-base-control {
+    flex: 1;
+    margin-right: 10px;
+    .components-base-control__field {
+      margin-bottom: 0px !important;
+    }
+  }
+}

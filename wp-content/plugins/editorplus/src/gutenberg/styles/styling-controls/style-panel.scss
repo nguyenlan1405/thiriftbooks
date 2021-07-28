@@ -1,0 +1,29 @@
+.ep-style-panel {
+  .controls {
+    position: absolute;
+    right: 40px;
+    top: 10px;
+
+    .ep-style-button {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      margin: 0px 5px;
+      padding: 4px 7px;
+
+      border-radius: 3px;
+
+      &:focus {
+        outline: none !important;
+      }
+
+      &.ep-active {
+        background-color: #eaeaea;
+        color: #fff;
+
+        svg {
+          fill: var(--wp-admin-theme-color);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.ep-block-pagination {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px 0px;
+
+  .ml {
+    margin-left: 10px;
+  }
+
+  input {
+    width: 50px;
+    margin: 0px 10px;
+    height: 35px;
+    outline: none;
+    background-color: #fff;
+    border: 1px solid #eee !important;
+    text-align: center;
+  }
+}

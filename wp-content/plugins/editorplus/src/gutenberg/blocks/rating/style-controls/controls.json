@@ -1,0 +1,204 @@
+{
+    "titleTypography":{
+        "target": "ep_sr_before_text",
+        "responsive": true,
+        "hover": true,
+        "options": [
+            {
+            "label":    "",
+            "control":  "Typography",
+            "attribute": "titleTypography",
+            "defaults": {
+                "desktop": {
+                    "text-color": "#1e1e1e",
+                    "font-size": "17px"
+                }
+              }
+            }
+        ]
+    },
+    "iconColor":{
+        "target": "ep_sr_icon span",
+        "responsive": true,
+        "hover": true,
+        "options": [
+            {
+                "label":    "Icon Color",
+                "control":  "ColorPicker",
+                "attribute": "iconUncheckedColor",
+                "css": "color",
+                "defaults": {
+                    "desktop": "#f0f0f0"
+                }   
+            }
+        ]
+    },
+    "iconActiveColor":{
+        "target": "ep_sr_icon.ep_sr_icon_checked span",
+        "responsive": true,
+        "hover": true,
+        "options": [
+            {
+                "label":    "Icon Active Color",
+                "control":  "ColorPicker",
+                "attribute": "iconCheckedColor",
+                "css": "color",
+                "defaults": {
+                    "desktop": "#f0ad4e"
+                }   
+            }
+        ]
+    },
+    "iconSize":{
+        "target": "ep_sr_icon span",
+        "responsive": true,
+        "hover": true,
+        "options": [
+            {
+                "label":    "Icon Size",
+                "control":  "Range",
+                "attribute": "iconSize",
+                "css": "font-size",
+                "props": {
+                  "supportedUnits": [
+                    "px"
+                  ],
+                  "max": 100
+                },
+                "defaults": {
+                    "desktop": "25px"
+               }
+            }
+        ]
+    },
+    "iconGap":{
+        "target": "ep_sr_icon_wrapper",
+        "responsive": true,
+        "hover": true,
+        "options": [
+            {
+                "label":    "Icon Gap",
+                "control":  "Range",
+                "attribute": "iconGap",
+                "css": "gap",
+                "props": {
+                  "supportedUnits": [
+                    "px"
+                  ],
+                  "max": 100
+                },
+                "defaults": {
+                    "desktop": "5px"
+               }
+            }
+        ]
+    },
+    "suffixTypography":{
+      "target": "ep_sr_after_text",
+      "responsive": true,
+      "hover": true,
+      "options": [
+          {
+          "label":    "",
+          "control":  "Typography",
+          "attribute": "suffixTypography",
+          "defaults": {
+              "desktop": {
+                  "text-color": "#1e1e1e",
+                  "font-size": "17px"
+              }
+            }
+          }
+      ]
+    },
+    "iconSuffixGap":{
+      "target": "ep_sr_iconsuffix",
+      "responsive": true,
+      "hover": true,
+      "options": [
+          {
+              "label":    "Gap",
+              "control":  "Range",
+              "attribute": "iconSuffixGap",
+              "css": "gap",
+              "props": {
+                "supportedUnits": [
+                  "px"
+                ],
+                "max": 100
+              },
+              "defaults": {
+                  "desktop": "5px"
+             }
+          }
+      ]
+  },
+    "inlineAlignment": {
+        "target": "ep_sr_wrapper",
+        "responsive": true,
+        "options": [
+          {
+            "label": "Alignment",
+            "control": "ButtonGroup",
+            "attribute": "inlineAlignment",
+            "css": "justify-content",
+            "defaults": {
+              "desktop": "flex-start"
+            }, 
+            "show_if": {
+              "selectLayout": "row"
+            },
+            "props": {
+              "options": [
+                {
+                  "icon": "editor-alignleft",
+                  "value": "flex-start"
+                },
+                {
+                  "icon": "editor-aligncenter",
+                  "value": "center"
+                },
+                {
+                  "icon": "editor-alignright",
+                  "value": "flex-end"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "stackAlignment": {
+        "target": "ep_sr_wrapper",
+        "responsive": true,
+        "options": [
+          {
+            "label": "Alignment",
+            "control": "ButtonGroup",
+            "attribute": "stackAlignment",
+            "css": "align-items",
+            "defaults": {
+              "desktop": "flex-start"
+            }, 
+            "show_if": {
+              "selectLayout": "column"
+            },
+            "props": {
+              "options": [
+                {
+                  "icon": "editor-alignleft",
+                  "value": "flex-start"
+                },
+                {
+                  "icon": "editor-aligncenter",
+                  "value": "center"
+                },
+                {
+                  "icon": "editor-alignright",
+                  "value": "flex-end"
+                }
+              ]
+            }
+          }
+        ]
+      }
+}

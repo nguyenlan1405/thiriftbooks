@@ -1,0 +1,14 @@
+.ep-border {
+  .ep-border-label {
+    margin: 0px 0px 10px 0px;
+  }
+
+  span.ep-border-label {
+    display: block;
+  }
+
+  .cwp-opt {
+    @include flexBox();
+    margin: 0px 0px 10px 0px;
+  }
+}

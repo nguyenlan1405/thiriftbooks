@@ -1,0 +1,38 @@
+.ep-dimension-control {
+  /***NEW CSS **/
+
+  .cwp-opt {
+    @include flexBox();
+    &:not(:first-child) {
+      margin: 0px 0px 10px 0px !important;
+    }
+
+    &:first-child {
+      margin: 10px 0px !important;
+    }
+  }
+
+  .ep-dimension {
+    &.ep-dimension-auto {
+      .ep-unit-root {
+        position: relative;
+        .ep-unit-control {
+          opacity: 0.5;
+        }
+
+        &:before {
+          content: "Auto";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: #808285;
+
+          z-index: 9;
+        }
+      }
+    }
+  }
+
+  /***NEW CSS **/
+}

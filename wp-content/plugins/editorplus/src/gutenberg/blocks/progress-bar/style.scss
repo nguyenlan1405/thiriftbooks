@@ -1,0 +1,37 @@
+.ep_pb_wrap {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.ep_pb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+}
+
+.ep_pb_title {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.ep_pb_text {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  white-space: nowrap;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding-left: 15px;
+}
+
+.ep_pb_percentage {
+  padding-right: 15px;
+}
+
+.epb_toggle_inline {
+  display: flex;
+  justify-content: space-between;
+}

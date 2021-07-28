@@ -1,0 +1,240 @@
+{
+    
+    "buttonsAlignment": {
+      "target": ".block-editor-block-list__layout",
+      "includeDotSuffix": false,
+      "responsive": true,
+      "hover": true,
+      "options": [
+        {
+          "custom": true,
+          "control": "IconClassToggle"
+        },
+        {
+          "label": "Alignment",
+          "control": "ButtonGroup",
+          "attribute": "epCustomButtonsAlignment",
+          "defaults": {
+            "desktop": "right"
+          },
+          "props": {
+            "options": [
+              {
+                "icon": "align-pull-left",
+                "value": "left"
+              },
+              {
+                "icon": "align-pull-right",
+                "value": "right"
+              }
+            ]
+          },
+          "condition": {
+            "query": [
+              {
+                "field": "attributes.className",
+                "compare": "IN",
+                "value": "ep-custom-buttons-icon"
+              }
+            ]
+          }
+        }
+      ]
+  },
+
+  "buttonIconBefore": {
+    "target": ".wp-block-button__link:before",
+    "includeDotSuffix": false,
+    "responsive": true,
+    "hover": true,
+    "options": [
+      {
+        "label": "Icon",
+        "control": "IconPicker",
+        "attribute": "epCustomButtonIconBefore",
+        "defaults": {
+          "desktop": "eplusicon-heart1"
+        },
+        "css": "content",
+        "condition": {
+          "query": [
+            {
+              "field": "attributes.className",
+              "compare": "IN",
+              "value": "ep-custom-buttons-icon"
+            },
+            {
+              "field": "attributes.epCustomButtonsAlignment.desktop",
+              "controlledBy": "ButtonGroup",
+              "compare": "EQUAL",
+              "value": "left"
+            }
+          ]
+        }
+      }
+    ]
+},
+
+  "buttonIconAfter": {
+    "target": ".wp-block-button__link:after",
+    "includeDotSuffix": false,
+    "responsive": true,
+    "hover": true,
+    "options": [
+      {
+        "label": "Icon",
+        "control": "IconPicker",
+        "attribute": "epCustomButtonIconAfter",
+        "defaults": {
+          "desktop": "eplusicon-heart1"
+        },
+        "css": "content",
+        "condition": {
+          "query": [
+            {
+              "field": "attributes.className",
+              "compare": "IN",
+              "value": "ep-custom-buttons-icon"
+            },
+            {
+              "field": "attributes.epCustomButtonsAlignment.desktop",
+              "controlledBy": "ButtonGroup",
+              "compare": "EQUAL",
+              "value": "right"
+            }
+          ]
+        }
+      }
+    ]
+},
+
+      "connectorIcon": {
+        "target": ".wp-block-button__link:after, {{class}} .wp-block-button__link:before",
+        "includeDotSuffix": false,
+        "responsive": true,
+        "hover": true,
+        "hoverTarget": ".wp-block-button__link:after, {{class}} .wp-block-button__link:before",
+        "options": [
+          {
+            "label": "Background",
+            "control": "ColorPicker",
+            "attribute": "epCustomIconBackground",
+            "css": "background",
+            "condition": {
+              "query": [
+                {
+                  "field": "attributes.className",
+                  "compare": "IN",
+                  "value": "ep-custom-buttons-icon"
+                }
+              ]
+            }
+          },
+          {
+            "label": "Color",
+            "control": "ColorPicker",
+            "attribute": "epCustomIconColor",
+            "css": "color",
+            "condition": {
+              "query": [
+                {
+                  "field": "attributes.className",
+                  "compare": "IN",
+                  "value": "ep-custom-buttons-icon"
+                }
+              ]
+            }
+          },
+          {
+            "label": "Radius",
+            "control": "Range",
+            "attribute": "epCustomIconRadius",
+            "css": "border-radius",
+            "condition": {
+              "query": [
+                {
+                  "field": "attributes.className",
+                  "compare": "IN",
+                  "value": "ep-custom-buttons-icon"
+                }
+              ]
+            }
+          },
+          {
+            "label": "Padding",
+            "control": "Range",
+            "attribute": "epCustomIconPadding",
+            "css": "padding",
+            "props": {
+              "supportedUnits": [
+                "px"
+              ],
+              "max": 30
+            },
+            "condition": {
+              "query": [
+                {
+                  "field": "attributes.className",
+                  "compare": "IN",
+                  "value": "ep-custom-buttons-icon"
+                }
+              ]
+            }
+          },
+          {
+            "label": "Icon Space",
+            "control": "Range",
+            "attribute": "epCustomBeforeIconSpace",
+            "css": "margin-right",
+            "props": {
+              "supportedUnits": [
+                "px"
+              ],
+              "max": 50
+            },
+            "condition": {
+              "query": [
+                {
+                  "field": "attributes.className",
+                  "compare": "IN",
+                  "value": "ep-custom-buttons-icon"
+                },
+                {
+                  "field": "attributes.epCustomButtonsAlignment.desktop",
+                  "controlledBy": "ButtonGroup",
+                  "compare": "EQUAL",
+                  "value": "left"
+                }
+              ]
+            }
+          },
+          {
+            "label": "Icon Space",
+            "control": "Range",
+            "attribute": "epCustomAfterIconSpace",
+            "css": "margin-left",
+            "props": {
+              "supportedUnits": [
+                "px"
+              ],
+              "max": 50
+            },
+            "condition": {
+              "query": [
+                {
+                  "field": "attributes.className",
+                  "compare": "IN",
+                  "value": "ep-custom-buttons-icon"
+                },
+                {
+                  "field": "attributes.epCustomButtonsAlignment.desktop",
+                  "controlledBy": "ButtonGroup",
+                  "compare": "EQUAL",
+                  "value": "right"
+                }
+              ]
+            }
+          }   
+        ]
+      }
+}

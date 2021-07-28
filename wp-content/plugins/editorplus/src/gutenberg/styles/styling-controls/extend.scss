@@ -1,0 +1,36 @@
+.ep-styling-controls__component {
+  .ep-styling-control-extended {
+    margin: 30px 0px;
+  }
+}
+
+.ep-styling-sidebar {
+  .ep-styling-sidebar-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+  }
+}
+
+.ep-customized-btn {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 15px !important;
+
+  border-radius: 3px;
+
+  &.ep-left-icon {
+    span,
+    svg {
+      margin-top: -1px;
+    }
+  }
+  &.ep-right-icon {
+    span,
+    svg {
+      margin-top: -1px;
+    }
+  }
+}

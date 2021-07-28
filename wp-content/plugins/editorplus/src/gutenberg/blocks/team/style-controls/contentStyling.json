@@ -1,0 +1,14 @@
+{
+  "contentStyling": {
+    "target": "ep_team_content",
+    "responsive": true,
+    "hover": true,
+    "options": [
+      {
+        "label": "",
+        "control": "Typography",
+        "attribute": "contentTypography"
+      }
+    ]
+  }
+}

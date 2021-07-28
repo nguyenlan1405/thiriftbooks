@@ -1,0 +1,10 @@
+@import './extensions.scss';
+
+.ep-general-root {
+    width: 70%;
+    margin: auto;
+
+    .ep-extension {
+        @include Extension();
+    }
+}

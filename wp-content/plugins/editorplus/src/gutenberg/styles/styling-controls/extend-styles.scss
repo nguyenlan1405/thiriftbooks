@@ -1,0 +1,18 @@
+.ep-extend-styles {
+    margin: 15px 0px;
+
+    .d-none {
+        display:none !important;
+    }
+
+    .ep-extend-navs {
+
+        width: 100%;
+        text-align:center;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+    }
+}

@@ -1,0 +1,59 @@
+//!----------------------BASE STYLES-------------------//
+
+@import "node_modules/@wordpress/base-styles/colors";
+@import "node_modules/@wordpress/base-styles/variables";
+@import "node_modules/@wordpress/base-styles/mixins";
+@import "node_modules/@wordpress/base-styles/breakpoints";
+@import "node_modules/@wordpress/base-styles/animations";
+@import "node_modules/@wordpress/base-styles/z-index";
+
+//!----------------------BASE STYLES-------------------//
+
+@import "../styles/partials/vars.scss";
+@import "../styles/partials/mixins.scss";
+@import "./styles/styling-controls/shadow.scss";
+@import "./styles/icon_inserter/index.scss";
+@import "./styles/styling-controls/buttonGroup.scss";
+@import "./styles/styling-controls/typography.scss";
+@import "./styles/styling-controls/extend.scss";
+@import "./styles/styling-controls/background.scss";
+@import "./styles/animation-builder/index.scss";
+@import "./styles/styling-controls/button-group.scss";
+@import "./styles/styling-controls/color-picker.scss";
+@import "./styles/styling-controls/dimensions.scss";
+@import "./styles/styling-controls/range.scss";
+@import "./styles/styling-controls/border.scss";
+@import "./styles/styling-controls/other-settings.scss";
+@import "./styles/styling-controls/style-panel.scss";
+@import "./styles/styling-controls/index.scss";
+@import "./styles/styling-controls/svg-picker.scss";
+
+//!----------------------BLOCK STYLINGS-------------------//
+
+@import "./blocks/layout-inserter/style.scss";
+@import "./blocks/rating/style.scss";
+@import "./blocks/progress-bar/style.scss";
+@import "./blocks/toggles/style.scss";
+@import "./blocks/tabs/style.scss";
+@import "./blocks/team/style.scss";
+@import "./blocks/counter/style.scss";
+@import "./blocks/countdown/style.scss";
+@import "./blocks/icon/style.scss";
+@import "./blocks/lottie/style.scss";
+
+//!----------------------BLOCK STYLINGS-------------------//
+
+//!---------------------- EXTENDED BLOCK CSS -------------------//
+
+@import "./extensions/extend-blocks/core-list/style.scss";
+@import "./extensions/extend-blocks/core-columns/style.scss";
+@import "./extensions/extend-blocks/core-image/style.scss";
+@import "./extensions/extend-blocks/core-button/style.scss";
+
+//!----------------------CUSTOM COMPONENTS-------------------//
+
+@import "./styles/icon-picker.scss";
+@import "./styles/tags.scss";
+@import "./styles/extend-blocks/variations_picker.scss";
+
+//!----------------------CUSTOM COMPONENTS-------------------//

@@ -1,0 +1,55 @@
+.ep-icon-picker {
+  margin-top: 20px;
+  .ep-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    div {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+    }
+  }
+}
+
+.ep-icon-picker-popover {
+  &.is-expanded {
+    .components-popover__content {
+      overflow-y: scroll !important;
+    }
+  }
+
+  .components-popover__content {
+    @include scrollbar();
+    min-width: 300px !important;
+    height: 400px;
+  }
+}
+
+.ep-icon-picker-root {
+  .ep-icon-picker-grid {
+    padding: 10px 0px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+
+    .ep-icon {
+      text-align: center;
+      padding: 15px 0px;
+      width: 100%;
+      background: #eee;
+      font-size: 20px;
+      cursor: pointer;
+      &.ep-active {
+        background: #000;
+        color: #fff;
+      }
+
+      &:not(.ep-active):hover {
+        background: #e8e5e5;
+      }
+    }
+  }
+}
