@@ -26,3 +26,9 @@ if( is_user_logged_in() ) {
     return $args;
 }
 add_filter( 'wp_nav_menu_args', 'my_wp_nav_menu_args' );
+
+wp_nav_menu(
+    array(
+        'menu' => 'Main Menu'
+    )
+);
