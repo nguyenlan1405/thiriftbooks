@@ -15,3 +15,14 @@ endif;
 add_filter( 'locale_stylesheet_uri', 'chld_thm_cfg_locale_css' );
 
 // END ENQUEUE PARENT ACTION
+
+function my_wp_nav_menu_args( $args = '' ) {
+ 
+if( is_user_logged_in() ) { 
+    $args['menu'] = 'menulogout';
+} else { 
+    $args['menu'] = 'menulogin';
+} 
+    return $args;
+}
+add_filter( 'wp_nav_menu_args', 'my_wp_nav_menu_args' );
