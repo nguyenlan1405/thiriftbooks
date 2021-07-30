@@ -28,3 +28,7 @@ Updated: 2021-07-27 09:27:37
 .title-catagories {
 	margin-top: 0.7em;
 }
+.footerContent img {
+    width: 30px;
+    margin-right: 5px;
+}
