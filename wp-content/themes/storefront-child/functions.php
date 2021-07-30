@@ -27,8 +27,6 @@ if( is_user_logged_in() ) {
 }
 add_filter( 'wp_nav_menu_args', 'my_wp_nav_menu_args' );
 
-wp_nav_menu(
-    array(
-        'menu' => 'Main Menu'
-    )
-);
+$locations = get_theme_mod('Menu1');
+$locations['primary-menu'] = $term_id_of_menu;
+set_theme_mod( 'Menu1', $locations );
