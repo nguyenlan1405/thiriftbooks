@@ -20,7 +20,7 @@ function my_wp_nav_menu_args( $args = '' ) {
  
 if( is_user_logged_in() ) { 
     $args['menu'] = 'menulogout';
-} else { 
+} else if( is_user_logged_out() ) {  { 
     $args['menu'] = 'menulogin';
 } 
     return $args;
