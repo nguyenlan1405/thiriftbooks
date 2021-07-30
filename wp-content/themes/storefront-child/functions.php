@@ -19,9 +19,9 @@ add_filter( 'locale_stylesheet_uri', 'chld_thm_cfg_locale_css' );
 function my_wp_nav_menu_args( $args = '' ) {
  
 if( is_user_logged_in() ) { 
-    $args['menu'] = 'menulogin';
-} else { 
     $args['menu'] = 'menulogout';
+} else { 
+    $args['menu'] = 'menulogin';
 } 
     return $args;
 }
