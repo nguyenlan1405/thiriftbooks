@@ -26,3 +26,5 @@ add_filter( 'locale_stylesheet_uri', 'chld_thm_cfg_locale_css' );
 //     return $args;
 // }
 // add_filter( 'wp_nav_menu_args', 'my_wp_nav_menu_args' );
+
+remove_action(‘woocommerce_after_shop_loop_item’, ‘woocommerce_widget_shopping_cart_after_buttons’);
