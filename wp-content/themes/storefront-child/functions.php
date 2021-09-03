@@ -16,15 +16,15 @@ add_filter( 'locale_stylesheet_uri', 'chld_thm_cfg_locale_css' );
 
 // END ENQUEUE PARENT ACTION
 
-// function my_wp_nav_menu_args( $args = '' ) {
+function my_wp_nav_menu_args( $args = '' ) {
  
-// if( is_user_logged_in() ) { 
-//     $args['menu'] = 'menulogout';
-// } else { 
-//     $args['menu'] = 'menulogin';
-// } 
-//     return $args;
-// }
-// add_filter( 'wp_nav_menu_args', 'my_wp_nav_menu_args' );
+ if( is_user_logged_in() ) { 
+     $args['menu'] = 'menulogout';
+ } else { 
+     $args['menu'] = 'menulogin';
+ } 
+     return $args;
+ }
+ add_filter( 'wp_nav_menu_args', 'my_wp_nav_menu_args' );
 
 remove_action(‘woocommerce_after_shop_loop_item’, ‘woocommerce_widget_shopping_cart_after_buttons’);
