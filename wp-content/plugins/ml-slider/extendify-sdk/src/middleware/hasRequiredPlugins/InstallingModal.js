@@ -10,7 +10,11 @@ export default function InstallingModal() {
     const [errorMessage, setErrorMessage] = useState('')
     const wantedTemplate = useWantedTemplateStore(store => store.wantedTemplate)
 
-    Plugins.installAndActivate(wantedTemplate?.fields?.required_plugins).then(() => {
+    // Hardcoded temporarily to not force EP install
+    // const required = wantedTemplate?.fields?.required_plugins
+    const required = wantedTemplate?.fields?.required_plugins.filter(p => p !== 'editorplus')
+
+    Plugins.installAndActivate(required).then(() => {
         useWantedTemplateStore.setState({
             importOnLoad: true,
         })
@@ -24,7 +28,9 @@ export default function InstallingModal() {
         return <ErrorInstalling msg={errorMessage}/>
     }
 
-    return <Modal title={__('Installing plugins', 'extendify-sdk')} isDismissible={false}>
+    return <Modal
+        title={__('Installing plugins', 'extendify-sdk')}
+        isDismissible={false}>
         <Button style={{
             width: '100%',
         }} disabled isPrimary isBusy onClick={() => {}}>

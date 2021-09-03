@@ -13,7 +13,7 @@ class AirPayQrScanGetWay extends QrScanGetWay {
         
 
         $this->id                 = 'airpay_qr_scan';
-        $this->icon = sprintf("%s/public/images/airpay.png",MC_QUETMA_PLUGIN_URL);
+        $this->icon = sprintf("%s/public/images/shopeepay.png",MC_QUETMA_PLUGIN_URL);
         $this->has_fields         = false;
         //$this->order_button_text  = __( 'Thanh Toán', 'woocommerce' );
         $this->method_title       = __( 'Quét Mã QR ShopeePay', 'woocommerce' );

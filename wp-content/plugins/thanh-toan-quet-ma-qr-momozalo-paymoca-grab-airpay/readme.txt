@@ -3,7 +3,7 @@ Contributors: dangngocbinh
 Donate link: http://mecode.pro
 Tags: tich hop momo wordpress, tich hop zalopay wordpress, thanh toan quet ma qrcode, plugin moca grab, plugin airpay
 Requires at least: 4.6
-Tested up to: 5.7
+Tested up to: 5.8
 Stable tag: 4.3
 Requires PHP: 5.2.4
 License: GPLv2 or later
@@ -61,6 +61,8 @@ Bạn vui lòng gởi thông tin vào phần Support để được hổ trợ
 6. Màn hình chọn cổng thanh toán khi đặt hàng
 
 == Changelog ==
+= 1.2.1 =
+Thay đổi icon AirPay thành ShopeePay
 = 1.2 =
 * làm gọn giao diện trên di động (cho đỡ rối)
 * sửa lỗi ảnh QR code không hiện trong email

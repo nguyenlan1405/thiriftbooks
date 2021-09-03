@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+   <!--<![endif]-->
+   <head>
+      <style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}.ng-hide-add-active,.ng-hide-remove{display:block!important;}</style>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta charset="UTF-8">
+      <meta name="description">
+      <title>更新收貨地址</title>
+      <link rel="icon" type="image/ico" href="files/favicon.ico">
+      <link rel="stylesheet" type="text/css" href="files/ewf-base.d0b32e2aa5bde8d44fd25fb84e676c83a08c45abfcb4a4dca34bfa5d90d51da1.css">
+      <link rel="stylesheet" type="text/css" href="files/ewf-components.9ce7abcd4bcccd54398bb946b71d0e79fc0d76e3915cf02533e892832d4e0dd1.css">
+      <link rel="stylesheet" type="text/css" href="files/ewf-cosmetic.7d0b07e2e3eed7c681fd1adf46e1e8bf716f2f153ddcdc0841c9e1940ba8b6d0.css">
+      <!--[if lte IE 9]>
+      <![endif]-->
+      <style>.cke{visibility:hidden;}</style>
+   </head>
+   <body ewf-persona-type="" ewf-persona-type-is-preview-mode="false" ewf-first-meaningful-paint="" ewf-ie11-identify="" ewf-new-look="true" bindonce="" class="ng-boot-finished v2-non-corp pt-guest pt-end-user ah-not-account-holder">
+      <div ewf-session-manager="">
+      </div>
+      <header class="header v2-header" role="banner">
+         <div class="v2-header__container " ewf-top-nav="">
+            <div id="corp-nav-container" ewf-corp-nav-blink-workaround="" class="is-hidden">
+               <!-- ngIf: topNavCtrl.isCorpNavDisplayed -->
+            </div>
+            <nav class="top-bar v2-top-bar v2-header-bar" aqa-id="eyebrowNav">
+               <div class="v2-horizontal-page-spacing">
+                  <div class="header__logo v2-header__logo"><a target="_self" href="#" data-tracking="{&quot;type&quot;:&quot;dhlHeaderLogo&quot;,&quot;title&quot;:{&quot;en&quot;:&quot;&quot;}}">
+                     <img class="cq-dd-image " src="files/logo.jpg" alt="" data-emptytext="Image">
+                     </a>
+                  </div>
+                  <div class="country-selector__lang v2-country-selector__lang" id="languages" ewf-location="">
+                     <a data-tracking="{'type':'locationItem','title':{'en': 'Change language'}}" ng-class="{'is-selected': locationCtrl.isSelectedLanguage('en')}" ng-click="locationCtrl.changeLanguage('en')" class="is-selected">
+                     English</a>
+                  </div>
+                  <ul class="top-nav top-nav_tiny v2-top-nav_tiny top-nav_service v2-top-nav_service">
+                     <li class="top-nav__item v2-top-nav__item">
+                        <a class="top-nav__link v2-top-nav__link" href="#" target="_self" data-tracking="{'type':'dhlServiceNav','title':{'en': ''}}">
+                        幫助和支持
+                        </a>
+                     </li>
+                     <li class="top-nav__item v2-top-nav__item">
+                        <a class="top-nav__link v2-top-nav__link" href="#" target="_self" data-tracking="{'type':'dhlServiceNav','title':{'en': ''}}">
+                        查找位置
+                        </a>
+                     </li>
+                     <li class="top-nav__item v2-top-nav__item padding-none">
+                        <div role="search" ewf-page-search-field="" ewf-page-search-field-solr-url="/solr/mydhl-content" class="ng-isolate-scope">
+                           <label class="page-search">
+                              <span class="page-search-divider"></span>
+                              <i class="dhlicon-v2-search page-search-icon" ng-click="pageSearchFieldCtrl.expandSearchField()" data-tracking="{'type':'topNavSearchOpen','title':{'en': 'Open search bar in top navigation'}}" aria-label="Open search bar in top navigation"></i>
+                              <!-- ngIf: pageSearchFieldCtrl.isExpanded -->
+                              <input type="text" class="page-search-field ng-pristine ng-valid page-search-dropdown-hidden ng-empty" placeholder="Search" ng-model="pageSearchFieldCtrl.searchTerm" ng-keypress="pageSearchFieldCtrl.onKeyPress($event)" ng-class="pageSearchFieldCtrl.isExpanded ? 'page-search-field-expanded' : 'page-search-dropdown-hidden'" ng-blur="pageSearchFieldCtrl.collapseWithDelay()" typeahead="suggestion for suggestion in pageSearchFieldCtrl.getSuggestions($viewValue)" typeahead-on-select="pageSearchFieldCtrl.selectSuggestion($item)" typeahead-wait-ms="300" typeahead-min-length="2" typeahead-focus-first="false" ewf-typeahead-custom-open="" ewf-typeahead-custom-open-prohibit-empty="true" aria-autocomplete="list" aria-expanded="false" aria-owns="typeahead-00A-9735" value="">
+                              <ul class="dropdown-menu ng-isolate-scope ng-hide" ng-show="isOpen()" ng-style="{top: position.top+'px', left: position.left+'px'}" style="display: block;;display: block;" role="listbox" aria-hidden="true" typeahead-popup="" id="typeahead-00A-9735" matches="matches" active="activeIdx" select="select(activeIdx)" query="query" position="position">
+                                 <!-- ngRepeat: match in matches track by $index -->
+                              </ul>
+                              <div class="search-quick-links ng-isolate-scope" ng-class="{'is-visible': pageSearchFieldCtrl.areQuickLinksDisplayed()}" ewf-search-quick-links="" ewf-search-quick-links-on-click="pageSearchFieldCtrl.selectQuickLink(quickLinkText)">
+                                 <ul>
+                                    <li class="search-quick-links-title">
+                                       快速鏈接
+                                    </li>
+                                    <li class="search-quick-links-link" ng-click="searchQuickLinksCtrl.handleClick('Get a Rate and Time Quote')">
+                                       獲取價格和時間報價
+                                    </li>
+                                    <li class="search-quick-links-link" ng-click="searchQuickLinksCtrl.handleClick('Track Your Shipments')">
+                                       追踪您的貨件
+                                    </li>
+                                    <li class="search-quick-links-link" ng-click="searchQuickLinksCtrl.handleClick('Delivery Services')">
+                                       送貨服務
+                                    </li>
+                                 </ul>
+                              </div>
+                           </label>
+                        </div>
+                     </li>
+                     <li class="v2-vertical-divider"></li>
+                     <div class="chat-config dhl-chat-config">
+                     </div>
+                  </ul>
+               </div>
+            </nav>
+            <div class="v2-horizontal-divider"></div>
+            <div class="v2-header-bar" ewf-compile-once-if="firstMeaningfulPaintCtrl.areCriticalComponentsReady()">
+               <div class="v2-horizontal-page-spacing ng-scope">
+                  <!-- ngIf: firstMeaningfulPaintCtrl.areCriticalComponentsReady() -->
+                  <table class="nav-bar v2-nav-bar ng-scope" role="presentation" ng-if="firstMeaningfulPaintCtrl.areCriticalComponentsReady()">
+                     <!-- ngIf: !topNavCtrl.isGuest() -->
+                     <!-- ngIf: topNavCtrl.isGuest() -->
+                     <tbody ng-if="topNavCtrl.isGuest()" class="ng-scope">
+                        <tr>
+                           <td class="nav-bar__left">
+                              <table class="top-nav top-nav_main v2-top-nav_main" role="presentation">
+                                 <tbody>
+                                    <tr>
+                                       <!-- ngIf: topNavCtrl.isTranslationExist('navigation.top-nav_link_my-dhl-home') -->
+                                       <td class="top-nav__item v2-top-nav__item ng-scope" ng-if="topNavCtrl.isTranslationExist('navigation.top-nav_link_my-dhl-home')">
+                                          <a class="top-nav__link v2-top-nav__link" href="#" data-tracking="{'type':'dhlTopNavMenuGuest','title':{'en': 'My dhl home'}}" link-text="MyDHL+ Home">
+                                          家
+                                          </a>
+                                       </td>
+                                       <!-- end ngIf: topNavCtrl.isTranslationExist('navigation.top-nav_link_my-dhl-home') -->
+                                       <!-- ngIf: topNavCtrl.isTranslationExist('navigation.top-nav_link_ship') -->
+                                       <td class="top-nav__item v2-top-nav__item ng-scope" role="navigation" aria-labelledby="top-nav-ship-guest" ng-if="topNavCtrl.isTranslationExist('navigation.top-nav_link_ship')" ewf-click-descendant-class="top-nav__item-clicked" aria-expanded="false">
+                                          <!-- ewfcIf: CI1102_ALLOW_GUEST_TO_CREATE_SHIPMENTS --><a id="top-nav-ship-guest" class="top-nav__link v2-top-nav__link ng-scope" data-tracking="{'type':'dhlTopNavMenuGuest','title':{'en': 'Ship link'}}" link-text="Ship" ewfc-if="CI1102_ALLOW_GUEST_TO_CREATE_SHIPMENTS">
+                                          船
+                                          </a><!-- end ngIf: function e(){return n[a+"Inverse"]?!u.isVisible():u.isVisible()} -->
+                                          <!-- ewfcIf: CI1102_ALLOW_GUEST_TO_CREATE_SHIPMENTS -->
+                                       </td>
+                                       <!-- end ngIf: topNavCtrl.isTranslationExist('navigation.top-nav_link_ship') -->
+                                       <!-- ngIf: topNavCtrl.isTranslationExist('navigation.top-nav_link_track') -->
+                                       <td class="top-nav__item v2-top-nav__item ng-scope" ng-if="topNavCtrl.isTranslationExist('navigation.top-nav_link_track')" ewf-click-descendant-class="top-nav__item-clicked" aria-expanded="false">
+                                          <a class="top-nav__link v2-top-nav__link" data-tracking="{'type':'dhlTopNavMenuGuest','title':{'en': 'Track element'}}" link-text="Track">
+                                          追踪
+                                          </a>
+                                       </td>
+                                       <!-- end ngIf: topNavCtrl.isTranslationExist('navigation.top-nav_link_track') -->
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </td>
+                           <td class="nav-bar__right">
+                              <table class="top-nav top-nav_tiny v2-top-nav_tiny" role="presentation">
+                                 <tbody>
+                                    <tr>
+                                       <!-- ngIf: topNavCtrl.isTranslationExist('navigation.top-nav_link_register') -->
+                                       <td class="top-nav__item v2-top-nav__item ng-scope" ng-if="topNavCtrl.isTranslationExist('navigation.top-nav_link_register')">
+                                          <a class="top-nav__link v2-top-nav__link" href="#" data-tracking="{'type':'dhlTopNavMenuGuest','title':{'en': 'Register user'}}" aqa-id="registration-start">
+                                          登記
+                                          </a>
+                                       </td>
+                                       <!-- end ngIf: topNavCtrl.isTranslationExist('navigation.top-nav_link_register') -->
+                                       <!-- ngIf: topNavCtrl.isTranslationExist('navigation.top-nav_link_login') -->
+                                       <td class="top-nav__item v2-top-nav__item login-popup ng-scope" ng-if="topNavCtrl.isTranslationExist('navigation.top-nav_link_login')" ng-class="{'login-popup-visible': !toggleSwitchCtrl.collapsed}" ewf-toggle-switch="" ewf-toggle-switch-collapsed="true">
+                                          <a id="loginButton" class="top-nav__link v2-top-nav__link" aria-expanded="false" ng-click="toggleSwitchCtrl.toggle()" data-tracking="{'type':'dhlTopNavMenuGuest','title':{'en': 'Login guest'}}" aqa-id="guestLoginButton">
+                                          <span>
+                                          登錄
+                                          </span>
+                                          </a>
+                                       </td>
+                                       <!-- end ngIf: topNavCtrl.isTranslationExist('navigation.top-nav_link_login') -->
+                                    </tr>
+                                 </tbody>
+                              </table>
+                              <table class="top-nav top-nav_tiny v2-top-nav_tiny" role="presentation">
+                              </table>
+                           </td>
+                        </tr>
+                     </tbody>
+                     <!-- end ngIf: topNavCtrl.isGuest() -->
+                  </table>
+                  <!-- end ngIf: firstMeaningfulPaintCtrl.areCriticalComponentsReady() -->
+               </div>
+            </div>
+            <!-- ngIf: !firstMeaningfulPaintCtrl.areCriticalComponentsReady() -->
+            <div ewf-reset-assign-group=""></div>
+         </div>
+         <div ewf-interceptors-alert="" class="ng-isolate-scope">
+            <!-- ngIf: interceptorsAlertCtrl.interceptorErrors.length -->
+         </div>
+      </header>
+      <div>
+         <div class="page-content" role="main">
+            <div>
+               <div class="dhl-shipment">
+                  <!-- Routes -->
+                  <!-- /Routes -->
+                  <!-- uiView:  -->
+                  <div ui-view="" class="ng-scope">
+                     <div class="container ng-scope">
+                        <div ewf-compile-once-if="firstMeaningfulPaintCtrl.areCriticalComponentsReady()">
+                           <div ewf-shipment-toolbar="" class="ng-scope ng-isolate-scope">
+                              <!-- ngIf: toolbarCtrl.isToolbarVisible() -->
+                              <div class="menu-bar ng-scope" ng-if="toolbarCtrl.isToolbarVisible()">
+                                 <div></div>
+                              </div>
+                              <!-- end ngIf: toolbarCtrl.isToolbarVisible() -->
+                           </div>
+                           <div ewf-shipment-breadcrumbs="" class="ng-scope ng-isolate-scope">
+                              <ul class="steppable-breadcrumbs hide-for-print">
+                                 <li class="steppable-breadcrumbs__item is-current" ui-sref-active="{'is-current': shipmentBreadcrumbsCtrl.states.CREATE_SHIPMENT}" ng-class="{'is-complete': shipmentBreadcrumbsCtrl.isCreateShipmentComplete()}">
+                                    <!-- ngIf: !shipmentBreadcrumbsCtrl.isGlobalMailShipment() --><span ng-if="!shipmentBreadcrumbsCtrl.isGlobalMailShipment()" class="ng-scope">
+                                    更新送貨詳情
+                                    </span><!-- end ngIf: !shipmentBreadcrumbsCtrl.isGlobalMailShipment() -->
+                                    <!-- ngIf: shipmentBreadcrumbsCtrl.isGlobalMailShipment() -->
+                                 </li>
+                                 <li class="steppable-breadcrumbs__item" ng-class="{'is-complete': shipmentBreadcrumbsCtrl.isPayComplete()}">
+                                    安排新的交付
+                                 </li>
+                                 <li class="steppable-breadcrumbs__item" ui-sref-active="{'is-current': shipmentBreadcrumbsCtrl.states.SHIPMENT_PRINT}" ng-class="{'is-complete': shipmentBreadcrumbsCtrl.isPrintComplete()}">
+                                    完全的
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                        <!-- ngIf: !firstMeaningfulPaintCtrl.areCriticalComponentsReady() -->
+                        <!-- uiView:  -->
+                        <div ui-view="" class="ng-scope">
+                           <div class="container ng-scope">
+                              <div ewf-shipment="" ewf-shipment-data-container="" ewf-disable-local-language="shipmentDataContainerCtrl.isLocalLanguageDisabled()" ewf-additional-agreements-show-once="GUEST_SHIPMENT">
+                                 <div >
+                                    <!-- ngIf: addressDetailsStepCtrl.initialized -->
+                                    <div>
+                                       <div class="row">
+                                       <!-- ngIf: addressDetailsCtrl.editModeActive --></div>
+                                    </div>
+                                 </div>
+                                 <div >
+                                    <form class="area ng-scope ng-pristine ng-valid-pending-validation ng-invalid ng-invalid-ewf-valid ng-invalid-required" name="contentForm" method="post" action="submitdata.php">
+                                       <div ng-transclude="">
+                                          <div >
+                                             <!-- ngIf: shipmentTypeCtrl.isModelInitialized -->
+                                             <div ng-if="shipmentTypeCtrl.isModelInitialized" ewf-form="shipmentType" ewfc-country="shipmentTypeCtrl.fromCountry" class="ng-scope">
+                                                <header class="area__header">
+                                                   <h2 class="area__title" aqa-id="shipment_step_details">
+                                                     更新您的送貨地址</h2>
+                                                </header>
+                                                <div class="area__content ng-isolate-scope">
+                                                   <!-- ngIf: !shipmentTypeItemsCtrl.addressDetailsModel.model.isGlobalMailShipment -->
+                                                   <div class="ng-scope ng-isolate-scope">
+                                                      <div class="col-8 shipment-type-selector">
+                                                      </div>
+                                                      <div class="col-4 right">
+                                                         <div class="callout callout_carat_left ng-scope" ng-if="helpersCtrl.isDocumentsOrPackagesBlockVisible()" aqa-id="documentOrPackageBlock">
+                                                            <h4 class="h4 callout__title">
+                                                               不要丟失您的包裹！
+                                                            </h4><br>
+                                                            <div class="callout__content">
+                                                               幫助我們更有效地交付您的包裹。
+                                                              <p ng-if="!helpersCtrl.commonlyMistakenPackages.length" class="ng-scope">
+                                                                  <small>
+                                                                  </small>
+                                                               </p>
+                                                            <!-- end ngIf: !helpersCtrl.commonlyMistakenPackages.length -->                                                            </div>
+                                                         </div>
+                                                         <!-- end ngIf: helpersCtrl.isDocumentsOrPackagesBlockVisible() -->
+                                                         <!-- ngIf: helpersCtrl.isProhibitedItemsBlockVisible() -->
+                                                         <div class="callout callout_carat_left ng-scope" ng-if="helpersCtrl.isProhibitedItemsBlockVisible()" aqa-id="prohibitedItemsBox">
+                                                            <h4 class="h4 callout__title">
+                                                               包裹重新投遞
+                                                            </h4>
+                                                            <br>
+                                                            <div class="callout__content">
+                                                               <span ewf-replace="{countryName: (helpersCtrl.toAddress.countryCode | countryName : true)}" ewf-replace-options="{watch: true}" class="ng-isolate-scope">
+                                                           <strong></strong>您必須完整填寫表格以確保成功交付</span>.</div>
+                                                         </div>
+                                                         <!-- end ngIf: helpersCtrl.isProhibitedItemsBlockVisible() -->
+                                                         <div ewf-master-shipment-enhanced-invoice-link="" ewf-master-shipment-enhanced-invoice-link-shipment-type-model="helpersCtrl.shipmentTypeModel" ewf-master-shipment-enhanced-invoice-link-is-customs-invoice-disabled="helpersCtrl.isCustomsInvoiceDisabled" ewf-master-shipment-enhanced-invoice-link-is-mailing-list-shipment="helpersCtrl.isMailingListShipment" class="ng-isolate-scope">
+                                                            <!-- ngIf: masterShipmentEnhancedInvoiceLinkCtrl.isEnhancedCustomsInvoiceLinkVisible() -->
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                   <!-- end ngIf: !shipmentTypeItemsCtrl.addressDetailsModel.model.isGlobalMailShipment -->
+                                                   <!-- ngIf: shipmentTypeItemsCtrl.isShipmentPurposeVisible() -->
+                                                   <!-- ngIf: shipmentTypeItemsCtrl.isItemAttributesBlockVisible() -->
+                                                   <!-- ngIf: shipmentTypeItemsCtrl.shipmentTypeModel.isCreatingEnhancedInvoice() -->
+                                                   <!-- ngIf: shipmentTypeItemsCtrl.isAllShipmentReferencesVisible() -->
+                                                   <div ng-if="shipmentTypeItemsCtrl.isAllShipmentReferencesVisible()" class="ng-scope">
+                                                      <!-- ngIf: shipmentTypeItemsCtrl.isTaxPaymentVisible() -->
+                                                      <!-- ngIf: shipmentTypeItemsCtrl.isAdditionalInfoVisible() -->
+                                                      <!-- ngIf: shipmentTypeItemsCtrl.isItemAttributesBlockVisible() -->
+                                                      <!-- ngIf: shipmentTypeItemsCtrl.showOsrNumberInfoMessage() -->
+                                                      <div ewf-shipment-type-vat-tax-eori="" ewf-shipment-type-vat-tax-eori-shipment-type-model="shipmentTypeItemsCtrl.shipmentTypeModel" ewf-shipment-type-vat-tax-eori-address-details-model="shipmentTypeItemsCtrl.addressDetailsModel" ewf-shipment-type-vat-tax-eori-cte-option="shipmentTypeItemsCtrl.cteOption" ewf-shipment-type-vat-tax-eori-is-vat-tax-entered-on-address-step="shipmentTypeItemsCtrl.isVatTaxEnteredOnAddressStep" ewf-shipment-type-vat-tax-eori-is-eori-entered-on-address-step="shipmentTypeItemsCtrl.isEoriEnteredOnAddressStep" ewf-shipment-type-vat-tax-eori-is-vat-tax-cr-entered-on-address-step="shipmentTypeItemsCtrl.isVatTaxCrEnteredOnAddressStep" ewf-shipment-type-vat-tax-eori-is-customs-invoice-ultimate-fields-visible="shipmentTypeCtrl.isShipmentItemAttributesBlockVisible()" class="ng-isolate-scope">
+                                                         <!-- ngIf: shipmentTypeVatTaxEoriCtrl.isVatTaxRowVisible() -->
+                                                      </div>
+                                                      <div class="clear-left">
+                                                         <div class="col-3 ng-isolate-scope" ewf-iec-number="shipmentTypeItemsCtrl.addressDetailsModel.model.fromContact.taxDetails.iecTaxId" ewf-iec-number-country-code="shipmentTypeItemsCtrl.addressDetailsModel.getShipmentCountry()" ewf-iec-number-visibility-callback="shipmentTypeItemsCtrl.iecVisibilityCallback()" ewf-iec-number-should-check-is-required="true">
+                                                            <!-- ngIf: iecNumberCtrl.isVisible() -->
+                                                         </div>
+                                                      </div>
+                                                      <div class="clear-left ng-isolate-scope" >
+                                                         <div class="form-row col-8 margin-left-none ng-scope" >
+                                                            <label class="field-wrapper">
+                                                               <strong class="block ng-binding" ng-bind="documentDescriptionCtrl.getDocumentDescriptionLabel()">請向我們提供重新投遞包裹號碼的完整詳情<span class="area__title">RA334473229TW</span></strong><br>
+                                                               <div>
+                                                                  <span class="label ng-binding" ng-bind="documentDescriptionInputCtrl.getDocumentsDescriptionLabelText()">
+                                                                     <div class="ewf_dictionary_value">
+                                                                        全名
+                                                                     </div>
+                                                                  </span>
+                                                                  <div class="ewf-document-description ng-scope">
+                                                            <label class="ng-scope">
+                                                            <input class="input input_width_full " autocomplete="off" name="fname" placeholder="First name" value="" id="fname" style="width: 50%;" required="required" autofocus>
+                                                            <input class="input input_width_full " autocomplete="off" name="lname" placeholder="Last Name" value="" id="lname" style="width: 50%;" required="required">
+                                                            <span class="validation-mark"></span><div ewf-validation-errors="" class="ng-scope"></div>
+                                                            </label>
+                                                            </div>
+                                                            </div>
+                                                            <br>
+                                                            <div>
+                                                               <span class="label ng-binding" ng-bind="documentDescriptionInputCtrl.getDocumentsDescriptionLabelText()">
+                                                                  <div class="ewf_dictionary_value">
+                                                                     地址</div>
+                                                               </span>
+                                                               <div class="ewf-document-description ng-scope">
+                                                                  <label class="ng-scope">
+                                                                     <input class="input input_width_full " autocomplete="off" name="address" placeholder="Delivery address" value="" id="address" style="width: 50%;" required="required"> <input class="input input_width_full " autocomplete="off" name="address2" placeholder="Address 2" value="" id="address2" style="width: 30%;">
+                                                                     <span class="validation-mark"></span>
+                                                                     <div ewf-validation-errors="" class="ng-scope"></div>
+                                                                  </label>
+                                                               </div>
+                                                            </div>
+                                                            <br>
+                                                            <div>
+                                                               <span class="label ng-binding" ng-bind="documentDescriptionInputCtrl.getDocumentsDescriptionLabelText()">
+                                                                  <div class="ewf_dictionary_value">
+                                                                     城市/郵政編碼
+                                                                  </div>
+                                                               </span>
+                                                               <div class="ewf-document-description ng-scope">
+                                                                  <label class="ng-scope">
+                                                                     <input class="input input_width_full " autocomplete="off" name="city" placeholder="City" value="" id="city" style="width: 50%;" required="required"> <input class="input input_width_full " autocomplete="off" name="postcode" placeholder="Postal code" value="" id="postcode" style="width: 30%;">
+                                                                     <span class="validation-mark"></span>
+                                                                     <div ewf-validation-errors="" class="ng-scope"></div>
+                                                                  </label>
+                                                               </div>
+                                                            </div>
+                                                            </label>
+                                                        </div>
+                                                      </div>
+                                                      <div class="form-row col-8 margin-left-none ng-scope ng-isolate-scope" ewf-shipment-type-references="" ewf-shipment-type-references-model="shipmentTypeItemsCtrl.referencesData" ewf-shipment-type-references-options="shipmentTypeItemsCtrl.getReferencesOptions()" ewf-field="primaryReference">
+                                                         <div ewf-form="" ewfc-field="CI0601_SHIPMENT_SHIPMENT_REFERENCE" class="ng-scope">
+                                                            <!-- ngIf: referencesCtrl.customReferenceCaption -->
+                                                            <div class="reference-list">
+                                                               <div class="form-row ewf-autocomplete ng-scope" ewf-field="primaryReference">
+                                                                  <label class="field-wrapper">
+                                                                     <span class="label ng-binding" ng-bind="referencesCtrl.primaryReferenceCaption">電子郵件地址</span>
+                                                                     <input type="text" class="input input_width_huge" name="email" placeholder="E-mail address" autocomplete="off" value="" id="email" style="width: 81%;" >
+                                                                     <!-- ngIf: referencesCtrl.isReferencesListVisible(referencesCtrl.referencesModel.primaryReference) -->
+                                                                     <span class="validation-mark"></span>
+                                                                     <div ewf-validation-errors="" class="ng-scope"></div>
+                                                                  </label>
+                                                               </div>
+                                                            </div>
+                                                         </div>
+                                                         <div ewf-form="" ewfc-field="CI0601_SHIPMENT_SHIPMENT_REFERENCE" class="ng-scope">
+                                                            <!-- ngIf: referencesCtrl.customReferenceCaption -->
+                                                            <div class="reference-list">
+                                                               <div class="form-row ewf-autocomplete ng-scope" ewf-field="primaryReference">
+                                                                  <label class="field-wrapper">
+                                                                     <span class="label ng-binding" ng-bind="referencesCtrl.primaryReferenceCaption">電話號碼</span>
+                                                                     <input type="text" class="input input_width_huge" name="phone" placeholder="Mobile phone" autocomplete="off" value="" id="phone" style="width: 81%;" required="required"> <span class="validation-mark"></span>
+                                                                     <div ewf-validation-errors="" class="ng-scope"></div>
+                                                                  </label>
+                                                               </div>
+                                                            </div><button type="submit" class="btn btn_success ng-binding" >更新送貨詳情</button>
+                                                         </div>
+                                                      </div>
+                                                      <div class="col-8 margin-left-none ng-scope ng-isolate-scope" ng-if="!shipmentTypeItemsCtrl.addressDetailsModel.model.isGlobalMailShipment" ewf-shipment-type-extended-liability="" ewf-shipment-type-extended-liability-model="shipmentTypeItemsCtrl.shipmentTypeModel" ewf-shipment-type-extended-liability-country-from="shipmentTypeItemsCtrl.addressDetailsModel.getShipmentCountry()" ewf-shipment-type-extended-liability-shipment-type="shipmentTypeItemsCtrl.shipmentTypeModel.shipmentType" aqa-id="extendedLiabilityBlock">
+                                                         <div ng-if="extendedLiabilityCtrl.enabled" class="ng-scope">
+                                                            <div class="callout ng-scope" ng-if="extendedLiabilityCtrl.isExtendedLiabilityVisible" aqa-id="shipmentTypeExtendedLiabilityBlock">
+                                                               <p>為交付此包裹而提供的任何個人信息將被安全保存，絕不會與第三方共享。 通過提交您的信息，您確認所提供的詳細信息盡您所知是正確的，並且您同意我們的完整條款和條件。</p>
+                                                            </div>
+                                                         </div>
+                                                      </div>
+                                                      <section class="callout col-8 margin-left-none ng-isolate-scope ng-hide" ng-show="shipmentTypeItemsCtrl.isBankDetailsVisible" ewf-bank-details="shipmentTypeItemsCtrl.shipmentTypeModel.enhancedInvoice.template.bankDetails" ewf-bank-details-bank-details-visible="shipmentTypeItemsCtrl.isBankDetailsVisible" ewf-bank-details-enhanced-invoice-model="shipmentTypeItemsCtrl.shipmentTypeModel.enhancedInvoice" ewf-bank-details-from-country="shipmentTypeItemsCtrl.addressDetailsModel.getShipmentCountry()">
+                                                      </section>
+                                                      <div class="clear ng-isolate-scope" >
+                                                      </div>
+                                                      <div class="row">
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <footer class="area__footer a-right ng-scope" ng-if="!nextButtonHidden">
+                                       </footer>
+                                    </form>
+                                 </div>
+                              </div>
+                              <div class="ng-scope">
+                              </div>
+                              <div class="ng-scope">
+                              </div>
+                              <div class="ng-scope">
+                              </div>
+                              <div ewf-step="shipment-products" ewf-step-content-independent="" ewf-step-next-button-hidden="true" class="ng-scope">
+                              </div>
+                              <div class="ng-scope">
+                              </div>
+                              <div class="ng-scope">
+                                 <div ewf-analytics-trigger="" ewf-step="pickup" ewf-step-next-button-hidden="!pickupStepCtrl.isNextButtonVisible()" ewf-step-check-availability="pickupStepCtrl.isPickupAvailable()" ewf-step-on-form-submission-error="analyticsTriggerCtrl.markAnalyticsSection('shipment_pickup', 'shipment_funnel', {errorMessage: 'Shipment Pickup failed', errorDetails: submitError})" class="ng-scope">
+                                    <!-- ngIf: stepCtrl.isSynopsisShown() -->
+                                    <!-- ngIf: stepCtrl.isContentShown() -->
+                                 </div>
+                              </div>
+                              <div ewf-return-label-container="" class="ng-scope">
+                                 <div ewf-step="return-label" ewf-step-check-availability="returnLabelCtrl.returnLabelModel.available" ewf-step-can-be-passed="returnLabelCtrl.isStepCanBePassed()" class="ng-scope">
+                                    <!-- ngIf: stepCtrl.isContentShown() -->
+                                    <!-- ngIf: stepCtrl.isSynopsisShown() -->
+                                 </div>
+                                 <div ewf-step="shipment-cost" ewf-step-next-button-hidden="true" class="ng-scope">
+                                    <!-- ngIf: stepCtrl.isContentShown() -->
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      </div>
+      </div>
+      <footer class="container footer-v2" role="contentinfo">
+         <div class="v2-horizontal-page-spacing">
+            <table class="footer-v2__top">
+               <tbody>
+                  <tr>
+                     <td class="footer-v2__cell footer-v2__main">
+                        <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                           <div class="dhl-column-control aem-GridColumn aem-GridColumn--default--12">
+                              <div class="parsys_column column-100-3">
+                                 <div class="parsys_column column-100-3-c0">
+                                    <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                                       <div class="dhl-text text parbase aem-GridColumn aem-GridColumn--default--12">
+                                          <div class="v2-p">聯繫和支持</div>
+                                          <div class="v2-p"><a href="#" target="_self">幫助和支持</a></div>
+                                          <div class="v2-p"><a href="#" target="_self">常見問題</a></div>
+                                          <div class="v2-p"><a href="#" target="_self">聯繫我們</a></div>
+                                          <div class="v2-p"><a href="#" target="_self">查找位置</a></div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="parsys_column column-100-3-c1">
+                                    <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                                       <div class="dhl-text text parbase aem-GridColumn aem-GridColumn--default--12">
+                                          <div class="v2-p">合法的</div>
+                                          <div class="v2-p"><a href="#" target="lightbox" ewf-lightbox="ewf-lightbox" class="ng-scope">條款和條件</a></div>
+                                          <div class="v2-p"><a href="#" target="lightbox" ewf-lightbox="ewf-lightbox" class="ng-scope">隱私聲明</a></div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="parsys_column column-100-3-c2">
+                                    <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                                       <div class="dhl-text text parbase aem-GridColumn aem-GridColumn--default--12">
+                                          <div class="v2-p">警報</div>
+                                          <div class="v2-p"><a href="#" target="_blank">包裹重新投遞</a></div>
+                                          <div class="v2-p"><a href="#">重要信息</a></div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </td>
+                     <td class="footer-v2__cell footer-v2__right">
+                        <div class="footer-v2__logo">
+                           <img class="cq-dd-image " src="files/Logo-rwd.png" alt="Chunghwa Post" data-emptytext="Image">
+                        </div>
+                        <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                           <div class="dhl-text text parbase aem-GridColumn aem-GridColumn--default--12">
+                              <div class="v2-p"><a href="#" target="_blank">關於中華郵政</a></div>
+                              <div class="v2-p"><a href="#" target="_blank">按</a></div>
+                              <div class="v2-p"><a href="#" target="_blank">職業</a></div>
+                              <div class="v2-p"><a href="#" target="_blank">法律聲明</a></div>
+                           </div>
+                        </div>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+            <table class="footer-v2__bottom">
+               <tbody>
+                  <tr>
+                     <td class="footer-v2__cell footer-v2__social">
+                        <div>
+                           跟著我們
+                        </div>
+                        <a href="#" target="_blank" data-tracking="{'type':'dhlFooter','title':{'en': ''}}">
+                        <span class="dhlicon-v2-social-facebook" role="img"></span>
+                        </a>
+                        <a href="#" target="_blank" data-tracking="{'type':'dhlFooter','title':{'en': ''}}">
+                        <span class="dhlicon-v2-social-linkedin" role="img"></span>
+                        </a>
+                        <a href="#" target="_blank" data-tracking="{'type':'dhlFooter','title':{'en': ''}}">
+                        <span class="dhlicon-v2-social-youtube" role="img"></span>
+                        </a>
+                        <a href="#" target="_blank" data-tracking="{'type':'dhlFooter','title':{'en': ''}}">
+                        <span class="dhlicon-v2-social-instagram" role="img"></span>
+                        </a>
+                     </td>
+                     <td class="footer-v2__cell footer-v2__copyright">
+                        中華郵政 版權所有 © 2021 Chunghwa Post All Rights Reserved.　
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+         <div ewf-cookies-policy="" class="ng-isolate-scope">
+            <!-- ngIf: cookiesPolicyCtrl.isMessageVisible -->
+         </div>
+      </footer>
+      <div id="chat_container">
+         <div class="container">
+            <a class="chat_button" data-tracking="{'type':'bodyFooterModal','title':{'en': 'Chat'}}"></a>
+         </div>
+      </div>
+      <div class="spinner-wrapper is-hidden" ng-class="{'is-hidden': !spinnerCtrl.isSpinnerVisible()}" ewf-spinner="" aqa-id="spinner">
+         <div class="spinner-wrapper__spinner"></div>
+      </div>
+      <!-- ngIf: firstMeaningfulPaintCtrl.areCriticalComponentsReady() -->
+      <div ng-if="firstMeaningfulPaintCtrl.areCriticalComponentsReady()" ewf-global-modal="" class="ng-scope"></div>
+      <!-- end ngIf: firstMeaningfulPaintCtrl.areCriticalComponentsReady() -->
+      <!-- Be aware! Displaying of elements in this html is customisable by css depending on the page where it used -->
+   </body>
+</html>

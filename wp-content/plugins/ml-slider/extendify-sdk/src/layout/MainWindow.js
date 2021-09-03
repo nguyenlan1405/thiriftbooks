@@ -6,16 +6,19 @@ import Toolbar from './Toolbar'
 import Content from '../pages/Content'
 import Login from '../pages/Login'
 import Welcome from '../pages/Welcome'
-import Beacon from '../components/Beacon'
+import useBeacon from '../hooks/useBeacon'
 import { useGlobalStore } from '../state/GlobalState'
 import { useUserStore } from '../state/User'
+import { General as GeneralApi } from '../api/General'
 
 export default function MainWindow() {
-    const initialFocus = useRef(null)
+    const containerRef = useRef(null)
     const open = useGlobalStore(state => state.open)
+    const metaData = useGlobalStore(state => state.metaData)
     const setOpen = useGlobalStore(state => state.setOpen)
     const currentPage = useGlobalStore(state => state.currentPage)
     const hasClickedThroughWelcomePage = useUserStore(state => state.hasClickedThroughWelcomePage)
+    useBeacon(open)
 
     useEffect(() => {
         hasClickedThroughWelcomePage && useGlobalStore.setState({
@@ -23,13 +26,20 @@ export default function MainWindow() {
         })
     }, [hasClickedThroughWelcomePage])
 
+    useEffect(() => {
+        if (!open || Object.keys(metaData).length) {
+            return
+        }
+        GeneralApi.metaData().then((data) => useGlobalStore.setState({ metaData: data }))
+    }, [open, metaData])
+
     return (
         <Transition.Root show={open} as={Fragment}>
             <Dialog
                 as="div"
                 static
                 className="extendify-sdk"
-                initialFocus={initialFocus}
+                initialFocus={containerRef}
                 onClose={() => {}}
             >
                 <div className="h-screen w-screen sm:h-auto sm:w-auto fixed z-high inset-0 overflow-y-auto">
@@ -48,16 +58,17 @@ export default function MainWindow() {
                             enterFrom="opacity-0 translate-y-4 sm:translate-y-5"
                             enterTo="opacity-100 translate-y-0"
                         >
-                            <div className="fixed lg:absolute inset-0 lg:overflow-hidden transform transition-all lg:p-5">
+                            <div
+                                ref={containerRef}
+                                tabIndex="0"
+                                className="fixed lg:absolute inset-0 lg:overflow-hidden transform transition-all lg:p-5">
                                 {/* TODO: With all the new pages, it's probably a good time to refactor this and organize things better here */}
                                 {currentPage === 'welcome'
                                     ? <Welcome
-                                        initialFocus={initialFocus}
                                         className="w-full h-full flex flex-col items-center relative shadow-xl max-w-screen-4xl mx-auto bg-extendify-light"/>
                                     : <div className="bg-white h-full flex flex-col items-center relative shadow-xl max-w-screen-4xl mx-auto">
                                         <Toolbar
                                             className="w-full h-16 border-solid border-0 border-b border-gray-300 flex-shrink-0"
-                                            initialFocus={initialFocus}
                                             hideLibrary={() => setOpen(false)}/>
                                         {currentPage === 'content' &&
                                         <Content className="w-full flex-grow overflow-hidden"/>
@@ -66,7 +77,6 @@ export default function MainWindow() {
                                         <Login className="w-full flex-grow overflow-hidden bg-extendify-light"/>
                                         }
                                     </div>}
-                                <Beacon show={open}/>
                             </div>
                         </Transition.Child>
                     </div>

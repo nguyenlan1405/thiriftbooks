@@ -1,14 +1,16 @@
 import { hasRequiredPlugins } from './hasRequiredPlugins'
 import { hasPluginsActivated } from './hasPluginsActivated'
+import { check as checkNeedsRegistrationModal } from './NeedsRegistrationModal'
 
 export const Middleware = (middleware = []) => {
     return {
         hasRequiredPlugins: hasRequiredPlugins,
         hasPluginsActivated: hasPluginsActivated,
+        NeedsRegistrationModal: checkNeedsRegistrationModal,
         stack: [],
         async check(template) {
             for (const m of middleware) {
-                let cb = await this[`${m}`](template)
+                const cb = await this[`${m}`](template)
                 setTimeout(() => {
                     this.stack.push(cb.pass
                         ? cb.allow

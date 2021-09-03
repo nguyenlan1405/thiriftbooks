@@ -2,7 +2,7 @@
 
 add_action('init', function () {
 
-	add_filter('block_categories', function ($categories, $post) {
+	function ep_register_block_categories($categories) {
 		return array_merge(
 			array(
 				array(
@@ -12,7 +12,13 @@ add_action('init', function () {
 			),
 			$categories
 		);
-	}, 10, 2);
+	}
+	// "block_categories" filter is deprecated for WP version above 5.8
+	if ( version_compare(get_bloginfo('version'),'5.8', '>=') ) {
+		add_filter('block_categories_all', 'ep_register_block_categories');
+	} else {
+		add_filter('block_categories', 'ep_register_block_categories');
+	}
 
 });
 

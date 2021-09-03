@@ -83,7 +83,6 @@ final class edpl__EditorPlus
         require_once EDPL_EDITORPLUS_PLUGIN_DIR . 'assets/index.php';
         require_once EDPL_EDITORPLUS_PLUGIN_DIR . 'extensions/index.php';
         require_once EDPL_EDITORPLUS_PLUGIN_DIR . 'blocks/index.php';
-        require_once EDPL_EDITORPLUS_PLUGIN_DIR . 'notices/index.php';
         require_once EDPL_EDITORPLUS_PLUGIN_DIR . 'page-template/index.php';
     }
 
@@ -108,39 +107,39 @@ final class edpl__EditorPlus
 
     public function enqueue_assets($suffix)
     {
-
+        global $current_screen;
 
         # using dynamic version to disable wp cache in the DEVELOPMENT version
         $dynamic_version = self::$env === 'PRODUCTION' ? self::$plugin_version : uniqid();
 
         # for gutenberg editor
-        if (in_array($suffix, ['post.php', 'post-new.php'])) :
+        if (in_array($suffix, ['post.php', 'post-new.php']) && (isset($current_screen) && $current_screen->is_block_editor())) :
 
             wp_enqueue_style('editor_plus-plugin-style', EDPL_EDITORPLUS_PLUGIN_URL . 'dist/gutenberg-editor.css', ['wp-components'], $dynamic_version);
-            wp_enqueue_script('editor_plus-plugin-script', EDPL_EDITORPLUS_PLUGIN_URL . 'dist/gutenberg-editor.js', ['wp-api', 'wp-i18n', 'wp-components', 'wp-element', 'wp-editor'], $dynamic_version, true);
-            wp_enqueue_script('editor_plus-lodash-conflict-script', EDPL_EDITORPLUS_PLUGIN_URL . 'assets/scripts/lodash-conflict.js', array('wp-api', 'wp-i18n', 'wp-components', 'wp-element', 'wp-editor'), $dynamic_version, true);
+        wp_enqueue_script('editor_plus-plugin-script', EDPL_EDITORPLUS_PLUGIN_URL . 'dist/gutenberg-editor.js', ['wp-api', 'wp-i18n', 'wp-components', 'wp-element', 'wp-editor'], $dynamic_version, true);
+        wp_enqueue_script('editor_plus-lodash-conflict-script', EDPL_EDITORPLUS_PLUGIN_URL . 'assets/scripts/lodash-conflict.js', array('wp-api', 'wp-i18n', 'wp-components', 'wp-element', 'wp-editor'), $dynamic_version, true);
 
-            # LOTTIE SCRIPT
-            wp_enqueue_script('editor-plus-lottie-script', EDPL_EDITORPLUS_PLUGIN_URL . '/assets/scripts/lottie-player.js', [], 'latest', true);
+        # LOTTIE SCRIPT
+        wp_enqueue_script('editor-plus-lottie-script', EDPL_EDITORPLUS_PLUGIN_URL . '/assets/scripts/lottie-player.js', [], 'latest', true);
 
-            $extra_css = apply_filters('editor_plus_plugin_css', '');
-            wp_add_inline_style('editor_plus-plugin-style', $extra_css);
+        $extra_css = apply_filters('editor_plus_plugin_css', '');
+        wp_add_inline_style('editor_plus-plugin-style', $extra_css);
 
-            # loading localized variables
+        # loading localized variables
 
-            $extensions = new edpl_ExtensionsManager();
-            $deploy = $extensions->deploy();
+        $extensions = new edpl_ExtensionsManager();
+        $deploy = $extensions->deploy();
 
-            wp_localize_script(
-                'editor_plus-plugin-script',
-                'editor_plus_extension',
-                $deploy->data
-            );
-            
-            wp_localize_script(
-                'editor_plus-plugin-script',
-                'eplus_data',
-                [
+        wp_localize_script(
+            'editor_plus-plugin-script',
+            'editor_plus_extension',
+            $deploy->data
+        );
+
+        wp_localize_script(
+            'editor_plus-plugin-script',
+            'eplus_data',
+            [
                     'rest_url' => get_rest_url(),
                     'ajax_url' => admin_url('admin-ajax.php'),
                     'plugin_assets' => plugins_url('assets', __FILE__)

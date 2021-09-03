@@ -3,6 +3,7 @@ import { useTemplatesStore } from './Templates'
 
 export const useGlobalStore = create((set) => ({
     open: false,
+    metaData: {},
     currentPage: 'welcome',
     setOpen: (value) => {
         set({
@@ -11,5 +12,6 @@ export const useGlobalStore = create((set) => ({
         // Reset the state if it's closed manualy
         // value && useTemplatesStore.getState().setActive({}) - Not this though
         value && useTemplatesStore.getState().removeTemplates()
+        // value && useTemplatesStore.getState().setActive({}) // This can be used to default to grid
     },
 }))

@@ -10,17 +10,18 @@ export default function ActivatingModal() {
     const [errorMessage, setErrorMessage] = useState('')
     const wantedTemplate = useWantedTemplateStore(store => store.wantedTemplate)
 
-    Plugins.installAndActivate(wantedTemplate?.fields?.required_plugins)
-        // Hardcoded temporarily to not force EP install
-        // .filter(p => p !== 'editorplus')).then(() => {
-        .then(() => {
-            useWantedTemplateStore.setState({
-                importOnLoad: true,
-            })
-        }).then(async () => {
-            await new Promise((resolve) => setTimeout(resolve, 1000))
-            render(<ReloadRequiredModal />, document.getElementById('extendify-root'))
+    // Hardcoded temporarily to not force EP install
+    // const required = wantedTemplate?.fields?.required_plugins
+    const required = wantedTemplate?.fields?.required_plugins.filter(p => p !== 'editorplus')
+
+    Plugins.installAndActivate(required).then(() => {
+        useWantedTemplateStore.setState({
+            importOnLoad: true,
         })
+    }).then(async () => {
+        await new Promise((resolve) => setTimeout(resolve, 1000))
+        render(<ReloadRequiredModal />, document.getElementById('extendify-root'))
+    })
         .catch(({ response }) => {
             setErrorMessage(response.data.message)
         })
@@ -29,7 +30,9 @@ export default function ActivatingModal() {
         return <ErrorActivating msg={errorMessage}/>
     }
 
-    return <Modal title={__('Activating plugins', 'extendify-sdk')} isDismissible={false}>
+    return <Modal
+        title={__('Activating plugins', 'extendify-sdk')}
+        isDismissible={false}>
         <Button
             style={{
                 width: '100%',

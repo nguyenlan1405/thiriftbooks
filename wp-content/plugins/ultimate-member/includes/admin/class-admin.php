@@ -66,6 +66,31 @@ if ( ! class_exists( 'um\admin\Admin' ) ) {
 
 			$this->templates_path = um_path . 'includes/admin/templates/';
 
+			add_action( 'admin_init', array( &$this, 'admin_init' ), 0 );
+
+			$prefix = is_network_admin() ? 'network_admin_' : '';
+			add_filter( "{$prefix}plugin_action_links_" . um_plugin, array( &$this, 'plugin_links' ) );
+
+			add_action( 'um_admin_do_action__user_cache', array( &$this, 'user_cache' ) );
+			add_action( 'um_admin_do_action__purge_temp', array( &$this, 'purge_temp' ) );
+			add_action( 'um_admin_do_action__manual_upgrades_request', array( &$this, 'manual_upgrades_request' ) );
+			add_action( 'um_admin_do_action__duplicate_form', array( &$this, 'duplicate_form' ) );
+			add_action( 'um_admin_do_action__um_hide_locale_notice', array( &$this, 'um_hide_notice' ) );
+			add_action( 'um_admin_do_action__um_can_register_notice', array( &$this, 'um_hide_notice' ) );
+			add_action( 'um_admin_do_action__um_hide_exif_notice', array( &$this, 'um_hide_notice' ) );
+			add_action( 'um_admin_do_action__user_action', array( &$this, 'user_action' ) );
+
+			add_action( 'um_admin_do_action__install_core_pages', array( &$this, 'install_core_pages' ) );
+
+			add_filter( 'admin_body_class', array( &$this, 'admin_body_class' ), 999 );
+
+			add_action( 'parent_file', array( &$this, 'parent_file' ), 9 );
+			add_filter( 'gettext', array( &$this, 'gettext' ), 10, 4 );
+			add_filter( 'post_updated_messages', array( &$this, 'post_updated_messages' ) );
+		}
+
+
+		function init_variables() {
 			$this->role_meta = apply_filters(
 				'um_role_meta_map',
 				array(
@@ -207,7 +232,7 @@ if ( ! class_exists( 'um\admin\Admin' ) ) {
 						'sanitize' => 'int',
 					),
 					'_um_restrict_custom_message'    => array(
-						'sanitize' => 'textarea',
+						'sanitize' => 'wp_kses',
 					),
 					'_um_access_redirect'            => array(
 						'sanitize' => 'int',
@@ -240,7 +265,7 @@ if ( ! class_exists( 'um\admin\Admin' ) ) {
 						'sanitize' => 'int',
 					),
 					'_um_restrict_custom_message'    => array(
-						'sanitize' => 'textarea',
+						'sanitize' => 'wp_kses',
 					),
 					'_um_access_redirect'            => array(
 						'sanitize' => 'int',
@@ -405,7 +430,7 @@ if ( ! class_exists( 'um\admin\Admin' ) ) {
 						'sanitize' => 'text',
 					),
 					'_um_register_max_width'            => array(
-						'sanitize' => 'absint',
+						'sanitize' => 'text',
 					),
 					'_um_register_icons'                => array(
 						'sanitize' => 'key',
@@ -432,7 +457,7 @@ if ( ! class_exists( 'um\admin\Admin' ) ) {
 						'sanitize' => 'text',
 					),
 					'_um_login_max_width'               => array(
-						'sanitize' => 'absint',
+						'sanitize' => 'text',
 					),
 					'_um_login_icons'                   => array(
 						'sanitize' => 'key',
@@ -465,10 +490,10 @@ if ( ! class_exists( 'um\admin\Admin' ) ) {
 						'sanitize' => 'text',
 					),
 					'_um_profile_max_width'             => array(
-						'sanitize' => 'absint',
+						'sanitize' => 'text',
 					),
 					'_um_profile_area_max_width'        => array(
-						'sanitize' => 'absint',
+						'sanitize' => 'text',
 					),
 					'_um_profile_icons'                 => array(
 						'sanitize' => 'key',
@@ -806,28 +831,6 @@ if ( ! class_exists( 'um\admin\Admin' ) ) {
 					),
 				)
 			);
-
-			add_action( 'admin_init', array( &$this, 'admin_init' ), 0 );
-
-			$prefix = is_network_admin() ? 'network_admin_' : '';
-			add_filter( "{$prefix}plugin_action_links_" . um_plugin, array( &$this, 'plugin_links' ) );
-
-			add_action( 'um_admin_do_action__user_cache', array( &$this, 'user_cache' ) );
-			add_action( 'um_admin_do_action__purge_temp', array( &$this, 'purge_temp' ) );
-			add_action( 'um_admin_do_action__manual_upgrades_request', array( &$this, 'manual_upgrades_request' ) );
-			add_action( 'um_admin_do_action__duplicate_form', array( &$this, 'duplicate_form' ) );
-			add_action( 'um_admin_do_action__um_hide_locale_notice', array( &$this, 'um_hide_notice' ) );
-			add_action( 'um_admin_do_action__um_can_register_notice', array( &$this, 'um_hide_notice' ) );
-			add_action( 'um_admin_do_action__um_hide_exif_notice', array( &$this, 'um_hide_notice' ) );
-			add_action( 'um_admin_do_action__user_action', array( &$this, 'user_action' ) );
-
-			add_action( 'um_admin_do_action__install_core_pages', array( &$this, 'install_core_pages' ) );
-
-			add_filter( 'admin_body_class', array( &$this, 'admin_body_class' ), 999 );
-
-			add_action( 'parent_file', array( &$this, 'parent_file' ), 9 );
-			add_filter( 'gettext', array( &$this, 'gettext' ), 10, 4 );
-			add_filter( 'post_updated_messages', array( &$this, 'post_updated_messages' ) );
 		}
 
 
@@ -1176,6 +1179,9 @@ if ( ! class_exists( 'um\admin\Admin' ) ) {
 					case 'textarea':
 						$sanitized[ $k ] = sanitize_textarea_field( $v );
 						break;
+					case 'wp_kses':
+						$sanitized[ $k ] = wp_kses_post( $v );
+						break;
 				}
 			}
 
@@ -1228,6 +1234,9 @@ if ( ! class_exists( 'um\admin\Admin' ) ) {
 						break;
 					case 'textarea':
 						$sanitized[ $k ] = sanitize_textarea_field( $v );
+						break;
+					case 'wp_kses':
+						$sanitized[ $k ] = wp_kses_post( $v );
 						break;
 				}
 			}
@@ -1366,6 +1375,9 @@ if ( ! class_exists( 'um\admin\Admin' ) ) {
 						break;
 					case 'textarea':
 						$sanitized[ $k ] = sanitize_textarea_field( $v );
+						break;
+					case 'wp_kses':
+						$sanitized[ $k ] = wp_kses_post( $v );
 						break;
 					case 'key':
 						if ( is_array( $v ) ) {
@@ -1821,6 +1833,8 @@ if ( ! class_exists( 'um\admin\Admin' ) ) {
 		 * Init admin action/filters + request handlers
 		 */
 		function admin_init() {
+			$this->init_variables();
+
 			if ( is_admin() && current_user_can( 'manage_options' ) && ! empty( $_REQUEST['um_adm_action'] ) ) {
 				$action = sanitize_key( $_REQUEST['um_adm_action'] );
 

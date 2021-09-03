@@ -60,7 +60,7 @@ $disable_page_header ? wp_head() : get_header();
                 margin-top: 0px;
             }
             .ep-temp-container [class*=wp-block] > * .wp-block-button__link {
-                border-radius: 0px !important;
+                border-radius: 0px;
             }
             .ep-temp-container .wp-block-image:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.aligncenter) {
                 margin-top:0px;

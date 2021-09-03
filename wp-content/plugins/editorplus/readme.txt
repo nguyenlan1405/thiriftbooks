@@ -2,9 +2,9 @@
 Contributors: munirkamal
 Tags: block, blocks, editor, gutenberg, gutenberg blocks, wordpress blocks, pattern
 Requires at least: 5.0
-Tested up to: 5.7
+Tested up to: 5.8
 Requires PHP: 5.6
-Stable tag: 2.8.1
+Stable tag: 2.8.4
 License: GPL-3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -164,6 +164,20 @@ Make sure to check out the Admin are of the plugin for configuration settings.
 4. Spacing (Margin & Padding)
 
 == Changelog ==
+
+=2.8.4 (28 Aug 2021)
+
+* Fixed: Bugs
+
+=2.8.3 (26 Aug 2021)
+
+* Improved: Templates library
+
+
+=2.8.2 (11 Aug 2021)
+
+* Improved: Unloaded assets on classic editor
+* Fixed: Deprecated warnings in editor
 
 =2.8.1 (13 July 2021)
 

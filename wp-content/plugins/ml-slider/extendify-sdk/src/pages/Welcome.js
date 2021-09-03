@@ -3,13 +3,13 @@ import { __, sprintf } from '@wordpress/i18n'
 import { useGlobalStore } from '../state/GlobalState'
 import { useTemplatesStore } from '../state/Templates'
 import { useUserStore } from '../state/User'
-import { SimplePing } from '../api/SimplePing'
+import { General as GeneralApi } from '../api/General'
 import { useEffect } from '@wordpress/element'
 
-export default function Login({ className, initialFocus }) {
+export default function Login({ className }) {
     const updateSearchParams = useTemplatesStore(state => state.updateSearchParams)
     const updateTypeAndClose = (type) => {
-        SimplePing.action(`welcome-${type ?? 'closed'}`)
+        GeneralApi.ping(`welcome-${type ?? 'closed'}`)
 
         type && updateSearchParams({
             type: type,
@@ -22,7 +22,7 @@ export default function Login({ className, initialFocus }) {
         })
     }
     useEffect(() => {
-        SimplePing.action('welcome-opened')
+        GeneralApi.ping('welcome-opened')
     }, [])
 
     return <div className={className}>
@@ -32,7 +32,6 @@ export default function Login({ className, initialFocus }) {
                 </div>
                 <div className="space-x-2 transform sm:translate-x-8">
                     <button
-                        ref={initialFocus}
                         type="button"
                         className="components-button has-icon"
                         onClick={() => updateTypeAndClose()}>

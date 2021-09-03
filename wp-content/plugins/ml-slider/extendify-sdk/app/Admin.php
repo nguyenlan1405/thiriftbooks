@@ -46,7 +46,7 @@ class Admin
         \add_action(
             'admin_enqueue_scripts',
             function ($hook) {
-                if (!current_user_can('install_plugins')) {
+                if (!current_user_can(App::$requiredCapability)) {
                     return;
                 }
 
@@ -67,7 +67,7 @@ class Admin
      */
     public function checkItsGutenbergPost($hook = '')
     {
-        if (isset($GLOBALS['typenow']) && use_block_editor_for_post_type($GLOBALS['typenow'])) {
+        if (isset($GLOBALS['typenow']) && \use_block_editor_for_post_type($GLOBALS['typenow'])) {
             return $hook && in_array($hook, ['post.php', 'post-new.php'], true);
         }
 

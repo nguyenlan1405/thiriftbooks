@@ -20,14 +20,16 @@ if (is_readable(EXTENDIFYSDK_PATH . 'vendor/autoload.php')) {
 $extendifysdkAdmin = new Admin();
 
 require EXTENDIFYSDK_PATH . 'routes/api.php';
-
-// Temporary disabled.
-// require EXTENDIFYSDK_PATH . 'editorplus/EditorPlus.php';.
-
+require EXTENDIFYSDK_PATH . 'editorplus/EditorPlus.php';
 
 \add_action(
     'init',
     function () {
+        // Hard-coded to run only within Editor Plus for now.
+        if (isset($GLOBALS['extendifySdkSourcePlugin']) && in_array($GLOBALS['extendifySdkSourcePlugin'], ['Editor Plus'], true)) {
+            require EXTENDIFYSDK_PATH . 'support/notices.php';
+        }
+
         \load_plugin_textdomain('extendify-sdk', false, EXTENDIFYSDK_PATH . 'languages');
     }
 );

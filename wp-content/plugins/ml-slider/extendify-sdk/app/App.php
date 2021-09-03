@@ -63,6 +63,13 @@ class App
     public static $sourcePlugin = 'Not set';
 
     /**
+     * Host plugin
+     *
+     * @var string
+     */
+    public static $requiredCapability = 'upload_files';
+
+    /**
      * Plugin config
      *
      * @var array

@@ -75,7 +75,7 @@ function um_submit_form_errors_hook_login( $args ) {
 
 	// if there is an error notify wp
 	if ( UM()->form()->has_error( $field ) || UM()->form()->has_error( $user_password ) || UM()->form()->count_errors() > 0 ) {
-		do_action( 'wp_login_failed', $user_name, UM()->form()->errors );
+		do_action( 'wp_login_failed', $user_name, UM()->form()->get_wp_error() );
 	}
 }
 add_action( 'um_submit_form_errors_hook_login', 'um_submit_form_errors_hook_login', 10 );
@@ -413,12 +413,12 @@ function um_add_submit_button_to_login( $args ) {
 
 	<div class="um-col-alt">
 
-		<?php if ( isset( $args['show_rememberme'] ) && $args['show_rememberme'] ) {
+		<?php if ( ! empty( $args['show_rememberme'] ) ) {
 			UM()->fields()->checkbox( 'rememberme', __( 'Keep me signed in', 'ultimate-member' ), false ); ?>
 			<div class="um-clear"></div>
 		<?php }
 
-		if ( isset( $args['secondary_btn'] ) && $args['secondary_btn'] != 0 ) { ?>
+		if ( ! empty( $args['secondary_btn'] ) ) { ?>
 
 			<div class="um-left um-half">
 				<input type="submit" value="<?php esc_attr_e( wp_unslash( $primary_btn_word ), 'ultimate-member' ); ?>" class="um-button" id="um-submit-btn" />
@@ -452,7 +452,7 @@ add_action( 'um_after_login_fields', 'um_add_submit_button_to_login', 1000 );
  * @param $args
  */
 function um_after_login_submit( $args ) {
-	if ( $args['forgot_pass_link'] == 0 ) {
+	if ( empty( $args['forgot_pass_link'] ) ) {
 		return;
 	} ?>
 
