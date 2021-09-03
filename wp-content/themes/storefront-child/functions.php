@@ -19,10 +19,16 @@ add_filter( 'locale_stylesheet_uri', 'chld_thm_cfg_locale_css' );
 function my_wp_nav_menu_args( $args = '' ) {
  
  if( is_user_logged_in() ) { 
-     $args['menu'] = 'menulogout';
+ 	if( 'top-navigation' == $args['theme_location'] ) { // Change top-navigation to theme specific name
+	    $args['menu'] = 'menulogout';
+	}
+     
  } else { 
-     $args['menu'] = 'menulogin';
- } 
+	if( 'top-navigation' == $args['theme_location'] ) { // Change top-navigation to theme specific name
+	    $args['menu'] = 'menulogin';
+	}
+     
+	} 
      return $args;
  }
  add_filter( 'wp_nav_menu_args', 'my_wp_nav_menu_args' );
